@@ -95,34 +95,73 @@ export default function Experience() {
   };
 
   return (
-    <section id="experience" className="relative py-24 px-6 bg-gradient-to-b from-slate-800 via-purple-900/20 to-slate-900">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(139,92,246,0.1),transparent_50%)]"></div>
-      <div className="max-w-6xl mx-auto relative z-10">
-        <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
-          <span className="gradient-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-            AI Expertise & Technical Skills
-          </span>
-        </h2>
+    <section id="experience" className="relative py-32 px-6 overflow-hidden">
+      {/* Background pattern */}
+      <div className="absolute inset-0 opacity-[0.02] bg-[linear-gradient(to_right,#00d9ff_1px,transparent_1px),linear-gradient(to_bottom,#00d9ff_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Section header */}
+        <div className="mb-20">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-strong border border-cyan-500/20 mb-6">
+            <span className="w-2 h-2 bg-cyan-400 rounded-full"></span>
+            <span className="text-sm font-medium text-cyan-300">Experience & Skills</span>
+          </div>
+          <h2 className="text-5xl md:text-6xl font-bold mb-6">
+            <span className="text-white">Technical</span>
+            <br />
+            <span className="gradient-text-ai">Expertise</span>
+          </h2>
+        </div>
 
-        <div className="grid md:grid-cols-2 gap-16 mb-20">
+        {/* AI Skills - Prominently Featured First */}
+        <div className="mb-24">
+          <div className="glass-strong rounded-2xl p-8 border border-cyan-500/20 glow-cyan">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center">
+                <span className="text-2xl">🤖</span>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-white">AI & Machine Learning</h3>
+                <p className="text-sm text-cyan-300">Core Expertise</p>
+              </div>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {skills["AI & Machine Learning"].map((skill, i) => (
+                <div
+                  key={i}
+                  className="px-4 py-3 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-200 text-sm font-medium hover:bg-cyan-500/15 hover:border-cyan-500/30 transition-all"
+                >
+                  {skill}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Two column layout */}
+        <div className="grid lg:grid-cols-2 gap-16">
+          {/* Experience */}
           <div>
-            <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-8">Experience</h3>
+            <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+              <span className="w-1 h-8 bg-gradient-to-b from-cyan-400 to-blue-400 rounded-full"></span>
+              Professional Experience
+            </h3>
             <div className="space-y-8">
               {experiences.map((exp, index) => (
-                <div key={index} className="relative pl-6">
-                  <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 via-pink-500 to-cyan-500"></div>
-                  <div className="absolute left-[-5px] top-0 w-3 h-3 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full"></div>
-                  <div className="glass rounded-lg p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
+                <div key={index} className="relative pl-8">
+                  <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-500/50 via-blue-500/50 to-purple-500/50"></div>
+                  <div className="absolute left-[-6px] top-0 w-4 h-4 bg-gradient-to-br from-cyan-400 to-blue-400 rounded-full border-2 border-[#0a0e1a]"></div>
+                  <div className="glass-strong rounded-xl p-6 border border-white/5">
                     <h4 className="text-xl font-semibold text-white mb-1">
                       {exp.title}
                     </h4>
-                    <p className="text-slate-300 mb-4">
+                    <p className="text-cyan-300 mb-4 text-sm font-medium">
                       {exp.company}
                     </p>
-                    <ul className="space-y-2 text-slate-300">
+                    <ul className="space-y-2 text-white/70 text-sm">
                       {exp.description.map((item, i) => (
-                        <li key={i} className="flex items-start">
-                          <span className="text-cyan-400 mr-3 mt-1">▸</span>
+                        <li key={i} className="flex items-start gap-2">
+                          <span className="text-cyan-400 mt-1.5 text-xs">→</span>
                           <span>{item}</span>
                         </li>
                       ))}
@@ -133,35 +172,30 @@ export default function Experience() {
             </div>
           </div>
 
+          {/* Skills */}
           <div>
-            <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 mb-8">Skills</h3>
-            <div className="space-y-8">
-              {Object.entries(skills).map(([category, items], catIndex) => {
-                const categoryGradients = [
-                  'from-purple-500/20 to-pink-500/20',
-                  'from-cyan-500/20 to-blue-500/20',
-                  'from-pink-500/20 to-purple-500/20',
-                  'from-blue-500/20 to-cyan-500/20',
-                  'from-purple-500/20 to-cyan-500/20',
-                ];
-                return (
-                  <div key={category} className="glass rounded-lg p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
-                    <h4 className="text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 mb-3">
-                      {category}
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {items.map((skill, i) => (
-                        <span
-                          key={i}
-                          className="px-3 py-1 text-sm font-medium bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 text-purple-300 rounded-full hover:border-purple-400/50 hover:scale-105 transition-all cursor-default"
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
+            <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+              <span className="w-1 h-8 bg-gradient-to-b from-blue-400 to-purple-400 rounded-full"></span>
+              Technical Skills
+            </h3>
+            <div className="space-y-6">
+              {Object.entries(skills).filter(([category]) => category !== "AI & Machine Learning").map(([category, items], catIndex) => (
+                <div key={category} className="glass-strong rounded-xl p-6 border border-white/5">
+                  <h4 className="text-lg font-semibold text-white mb-4">
+                    {category}
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {items.map((skill, i) => (
+                      <span
+                        key={i}
+                        className="px-3 py-1.5 text-xs font-medium bg-white/5 border border-white/10 text-white/70 rounded-lg hover:bg-white/10 hover:border-white/20 transition-all cursor-default"
+                      >
+                        {skill}
+                      </span>
+                    ))}
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -169,4 +203,3 @@ export default function Experience() {
     </section>
   );
 }
-

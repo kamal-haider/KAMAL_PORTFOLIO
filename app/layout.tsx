@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Kamal Haider - Technical Leader & Product-Focused Builder",
-  description: "I design and ship systems end-to-end — from architecture and AI-driven apps to real-world operations — and help teams move from idea to production with clarity and speed.",
+  title: "Kamal Haider - AI-First Technical Leader & Product Architect",
+  description: "I architect and ship AI-powered systems end-to-end — from LLM integration and intelligent automation to scalable product platforms. Building AI systems that matter.",
 };
 
 export default function RootLayout({

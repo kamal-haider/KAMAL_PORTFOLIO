@@ -1,61 +1,70 @@
 export default function Contact() {
   return (
-    <section id="contact" className="relative py-24 px-6 bg-gradient-to-b from-slate-800 via-slate-900 to-slate-950 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(139,92,246,0.15),transparent_70%)]"></div>
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"></div>
+    <section id="contact" className="relative py-32 px-6 overflow-hidden">
+      {/* Background pattern */}
+      <div className="absolute inset-0 opacity-[0.02] bg-[linear-gradient(to_right,#00d9ff_1px,transparent_1px),linear-gradient(to_bottom,#00d9ff_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
       
-      <div className="max-w-2xl mx-auto text-center relative z-10">
-        <h2 className="text-4xl md:text-5xl font-bold mb-6">
-          <span className="gradient-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-            Let's work together
-          </span>
-        </h2>
-        <p className="text-lg text-slate-300 mb-12 leading-relaxed">
-          If you're looking for someone who can architect AI-powered systems, integrate LLMs into production products, and turn complex AI capabilities into practical features — I'd love to talk.
-        </p>
+      {/* Subtle gradient orbs */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+      
+      <div className="max-w-4xl mx-auto text-center relative z-10">
+        {/* Section header */}
+        <div className="mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-strong border border-cyan-500/20 mb-6">
+            <span className="w-2 h-2 bg-cyan-400 rounded-full"></span>
+            <span className="text-sm font-medium text-cyan-300">Get In Touch</span>
+          </div>
+          <h2 className="text-5xl md:text-6xl font-bold mb-6">
+            <span className="text-white">Let's Build</span>
+            <br />
+            <span className="gradient-text-ai">Together</span>
+          </h2>
+          <p className="text-lg text-white/60 leading-relaxed max-w-2xl mx-auto">
+            If you're looking for someone who can architect AI-powered systems, integrate LLMs into production products, and turn complex AI capabilities into practical features — I'd love to talk.
+          </p>
+        </div>
 
-        <div className="space-y-6">
+        {/* Contact links */}
+        <div className="grid md:grid-cols-3 gap-6">
           <a
             href="mailto:mr.haiderk@gmail.com"
-            className="group block glass rounded-xl p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20"
+            className="group glass-strong rounded-xl p-6 border border-white/5 hover:border-cyan-500/30 transition-all duration-300 hover:scale-[1.02]"
           >
-            <div className="flex items-center justify-center gap-3">
-              <span className="text-2xl">✉️</span>
-              <span className="text-lg text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 transition-all">
-                mr.haiderk@gmail.com
-              </span>
+            <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+              <span className="text-xl">✉️</span>
             </div>
+            <div className="text-sm font-semibold text-white mb-1">Email</div>
+            <div className="text-xs text-white/50">mr.haiderk@gmail.com</div>
           </a>
+          
           <a
             href="https://www.linkedin.com/in/kamal-haider/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group block glass rounded-xl p-6 border border-white/10 hover:border-blue-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/20"
+            className="group glass-strong rounded-xl p-6 border border-white/5 hover:border-blue-500/30 transition-all duration-300 hover:scale-[1.02]"
           >
-            <div className="flex items-center justify-center gap-3">
-              <span className="text-2xl">💼</span>
-              <span className="text-lg text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-cyan-400 transition-all">
-                LinkedIn Profile
-              </span>
+            <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+              <span className="text-xl">💼</span>
             </div>
+            <div className="text-sm font-semibold text-white mb-1">LinkedIn</div>
+            <div className="text-xs text-white/50">Connect with me</div>
           </a>
+          
           <a
             href="https://github.com/kamal-haider"
             target="_blank"
             rel="noopener noreferrer"
-            className="group block glass rounded-xl p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20"
+            className="group glass-strong rounded-xl p-6 border border-white/5 hover:border-purple-500/30 transition-all duration-300 hover:scale-[1.02]"
           >
-            <div className="flex items-center justify-center gap-3">
-              <span className="text-2xl">💻</span>
-              <span className="text-lg text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 transition-all">
-                GitHub Profile
-              </span>
+            <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-cyan-500 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+              <span className="text-xl">💻</span>
             </div>
+            <div className="text-sm font-semibold text-white mb-1">GitHub</div>
+            <div className="text-xs text-white/50">View my code</div>
           </a>
         </div>
       </div>
     </section>
   );
 }
-

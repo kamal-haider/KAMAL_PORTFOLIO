@@ -1,62 +1,69 @@
 export default function OtherProjects() {
   const projects = [
     {
-      title: "Flux – Live Streaming with Viewer Control",
+      title: "Flux",
+      subtitle: "Live Streaming with Viewer Control",
       description: "Concept for a mobile-first streaming platform where viewers drive the experience (polls, actions, dynamic overlays).",
       tech: ["Mobile", "Streaming", "Real-time"]
     },
     {
-      title: "Pop Quiz – Multi-Platform Exam App",
+      title: "Pop Quiz",
+      subtitle: "Multi-Platform Exam App",
       description: "A lightweight, multi-platform USMLE-style exam simulator built in Flutter. Features timed and untimed exam modes, instant answer feedback with explanations, category-based filtering, end-of-test analytics, and cloud-backed question sets.",
       tech: ["Flutter", "Firebase", "Dart", "Cross-Platform"]
     },
     {
-      title: "IoT Sensor Experiments for Medical Wearables",
+      title: "IoT Sensor Experiments",
+      subtitle: "Medical Wearables Prototyping",
       description: "Prototype work with IMUs, light sensors, and microcontrollers to better understand hardware for future health-related projects.",
       tech: ["IoT", "Hardware", "Prototyping"]
     }
   ];
 
-  const cardGradients = [
-    'from-purple-500/10 to-pink-500/10',
-    'from-cyan-500/10 to-blue-500/10',
-    'from-pink-500/10 to-purple-500/10',
-  ];
-
   return (
-    <section className="relative py-24 px-6 bg-gradient-to-b from-slate-900 to-slate-800">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(236,72,153,0.1),transparent_50%)]"></div>
+    <section className="relative py-32 px-6 overflow-hidden">
+      {/* Background pattern */}
+      <div className="absolute inset-0 opacity-[0.02] bg-[linear-gradient(to_right,#00d9ff_1px,transparent_1px),linear-gradient(to_bottom,#00d9ff_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+      
       <div className="max-w-6xl mx-auto relative z-10">
-        <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
-          <span className="gradient-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
-            Other Projects
-          </span>
-        </h2>
+        {/* Section header */}
+        <div className="mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-strong border border-cyan-500/20 mb-6">
+            <span className="w-2 h-2 bg-cyan-400 rounded-full"></span>
+            <span className="text-sm font-medium text-cyan-300">Additional Work</span>
+          </div>
+          <h2 className="text-5xl md:text-6xl font-bold mb-6">
+            <span className="text-white">Other</span>
+            <br />
+            <span className="gradient-text-ai">Projects</span>
+          </h2>
+        </div>
         
+        {/* Projects grid */}
         <div className="grid md:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <div 
               key={index} 
-              className="group relative p-6 glass rounded-xl border border-white/10 hover:border-white/30 transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+              className="group glass-strong rounded-xl p-6 border border-white/5 hover:border-cyan-500/20 transition-all duration-300 hover:scale-[1.02]"
             >
-              <div className={`absolute inset-0 bg-gradient-to-br ${cardGradients[index % cardGradients.length]} rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
-              <div className="relative z-10">
-                <h3 className="text-xl font-semibold text-white mb-3">
+              <div className="mb-4">
+                <h3 className="text-xl font-bold text-white mb-1">
                   {project.title}
                 </h3>
-                <p className="text-slate-300 mb-4 leading-relaxed">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tag, i) => (
-                    <span 
-                      key={i} 
-                      className="px-3 py-1 text-xs font-medium bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 text-purple-300 rounded-full hover:border-purple-400/50 transition-colors"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                <p className="text-sm text-cyan-300 font-medium">{project.subtitle}</p>
+              </div>
+              <p className="text-sm text-white/60 mb-4 leading-relaxed">
+                {project.description}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {project.tech.map((tag, i) => (
+                  <span 
+                    key={i} 
+                    className="px-2.5 py-1 text-xs font-medium bg-white/5 border border-white/10 text-white/60 rounded-md"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
           ))}
@@ -65,4 +72,3 @@ export default function OtherProjects() {
     </section>
   );
 }
-

@@ -16,84 +16,121 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center px-6 pt-20 pb-16 overflow-hidden">
-      {/* Animated gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-cyan-900/20"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(139,92,246,0.1),transparent_50%)]"></div>
+    <section id="hero" className="relative min-h-screen flex items-center justify-center px-6 pt-32 pb-24 overflow-hidden">
+      {/* Subtle grid background */}
+      <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#00d9ff_1px,transparent_1px),linear-gradient(to_bottom,#00d9ff_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
       
-      {/* Floating orbs */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/30 rounded-full blur-3xl animate-float"></div>
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-500/30 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-      <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-pink-500/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
+      {/* Minimal gradient orbs */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-[32rem] h-[32rem] bg-blue-500/5 rounded-full blur-3xl"></div>
       
-      <div className="relative max-w-4xl mx-auto text-center z-10">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6">
-          <span className="gradient-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-            Kamal Haider
-          </span>
-        </h1>
-        <h2 className="text-2xl md:text-3xl font-semibold text-slate-200 mb-8">
-          AI-First Technical Leader & Product Architect
-        </h2>
-        <p className="text-lg md:text-xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-          I architect and ship AI-powered systems end-to-end — from LLM integration and intelligent automation to scalable product platforms. I turn complex AI capabilities into practical, user-facing features that deliver real value.
-        </p>
-        
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <button
-            onClick={scrollToWork}
-            className="group relative px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-medium overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50"
-          >
-            <span className="relative z-10">View Selected Work</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-pink-700 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-          </button>
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-8 py-3 glass text-white border border-white/30 rounded-lg font-medium hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:border-white/50"
-          >
-            Download Resume
-          </a>
+      <div className="relative max-w-7xl mx-auto w-full z-10">
+        {/* Main content - asymmetric layout */}
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
+          {/* Left column - Main text */}
+          <div className="lg:col-span-7 space-y-8">
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-strong border border-cyan-500/20">
+                <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse-slow"></span>
+                <span className="text-sm font-medium text-cyan-300">AI-First Technical Leader</span>
+              </div>
+              
+              <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.1] tracking-tight">
+                <span className="text-white">Building</span>
+                <br />
+                <span className="gradient-text-ai">AI Systems</span>
+                <br />
+                <span className="text-white/80">That Matter</span>
+              </h1>
+              
+              <p className="text-xl md:text-2xl text-white/60 leading-relaxed max-w-2xl">
+                I architect and ship AI-powered products end-to-end — from LLM integration and intelligent automation to scalable platforms that deliver real value.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <button
+                onClick={scrollToWork}
+                className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-semibold overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-cyan-500/30"
+              >
+                <span className="relative z-10">View AI Projects</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-400 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              </button>
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 glass-strong text-white border border-white/10 rounded-lg font-semibold hover:border-cyan-500/30 hover:bg-white/[0.05] transition-all duration-300"
+              >
+                Download Resume
+              </a>
+            </div>
+          </div>
+
+          {/* Right column - AI Skills showcase */}
+          <div className="lg:col-span-5 space-y-4">
+            <div className="glass-strong rounded-2xl p-6 border border-cyan-500/10 hover:border-cyan-500/30 transition-all duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center">
+                  <span className="text-xl">🤖</span>
+                </div>
+                <h3 className="text-lg font-bold text-white">LLM Integration</h3>
+              </div>
+              <p className="text-sm text-white/60 leading-relaxed">
+                OpenAI, Anthropic APIs, prompt engineering, and production-ready AI pipelines
+              </p>
+            </div>
+
+            <div className="glass-strong rounded-2xl p-6 border border-blue-500/10 hover:border-blue-500/30 transition-all duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center">
+                  <span className="text-xl">⚡</span>
+                </div>
+                <h3 className="text-lg font-bold text-white">AI Architecture</h3>
+              </div>
+              <p className="text-sm text-white/60 leading-relaxed">
+                End-to-end AI systems: chunking, embeddings, retrieval, hallucination controls
+              </p>
+            </div>
+
+            <div className="glass-strong rounded-2xl p-6 border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500 to-cyan-500 flex items-center justify-center">
+                  <span className="text-xl">🚀</span>
+                </div>
+                <h3 className="text-lg font-bold text-white">Product Execution</h3>
+              </div>
+              <p className="text-sm text-white/60 leading-relaxed">
+                From AI research to shipped features — architecture, implementation, deployment
+              </p>
+            </div>
+          </div>
         </div>
 
-        <p className="text-sm text-slate-400 italic">
-          Currently exploring Staff / Principal / Technical Fellow opportunities.
-        </p>
-
-        {/* Pillars */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="group p-6 glass rounded-xl border border-white/10 hover:border-pink-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-pink-500/20">
-            <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-700 rounded-lg mb-4 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
-              🤖
-            </div>
-            <h3 className="font-semibold text-white mb-2">AI Integration & LLMs</h3>
-            <p className="text-sm text-slate-300">Build intelligent systems with LLM APIs, prompt engineering, and AI-driven automation.</p>
+        {/* Bottom section - Quick stats/pillars */}
+        <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="text-center">
+            <div className="text-3xl font-bold gradient-text-ai mb-2">AI-First</div>
+            <div className="text-sm text-white/50">Core Focus</div>
           </div>
-          <div className="group p-6 glass rounded-xl border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20">
-            <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-700 rounded-lg mb-4 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
-              🏗️
-            </div>
-            <h3 className="font-semibold text-white mb-2">AI Product Architecture</h3>
-            <p className="text-sm text-slate-300">Design scalable systems that integrate AI capabilities into production-ready products.</p>
+          <div className="text-center">
+            <div className="text-3xl font-bold gradient-text-ai mb-2">End-to-End</div>
+            <div className="text-sm text-white/50">Full Stack</div>
           </div>
-          <div className="group p-6 glass rounded-xl border border-white/10 hover:border-cyan-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-cyan-500/20">
-            <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-700 rounded-lg mb-4 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
-              ⚡
-            </div>
-            <h3 className="font-semibold text-white mb-2">End-to-End Execution</h3>
-            <p className="text-sm text-slate-300">From AI research to shipped features — architecture, implementation, and real-world deployment.</p>
+          <div className="text-center">
+            <div className="text-3xl font-bold gradient-text-ai mb-2">Production</div>
+            <div className="text-sm text-white/50">Ready Systems</div>
           </div>
-          <div className="group p-6 glass rounded-xl border border-white/10 hover:border-blue-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/20">
-            <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg mb-4 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
-              🎯
-            </div>
-            <h3 className="font-semibold text-white mb-2">Product Strategy</h3>
-            <p className="text-sm text-slate-300">Define roadmaps, MVPs, and go-to-market strategies for AI-powered products.</p>
+          <div className="text-center">
+            <div className="text-3xl font-bold gradient-text-ai mb-2">Real Impact</div>
+            <div className="text-sm text-white/50">Measurable Results</div>
           </div>
         </div>
+
+        <p className="text-center text-sm text-white/40 mt-12 italic">
+          Currently exploring Staff / Principal / Technical Fellow opportunities
+        </p>
       </div>
     </section>
   );
 }
-

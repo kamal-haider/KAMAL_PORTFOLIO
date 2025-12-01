@@ -3,8 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --background: #0a0a0f;
-  --foreground: #f8fafc;
+  --background: #0a0e1a;
+  --foreground: #e8f0f8;
+  --accent-cyan: #00d9ff;
+  --accent-blue: #3b82f6;
+  --accent-purple: #8b5cf6;
+  --surface: #0f1624;
+  --surface-elevated: #151b2e;
 }
 
 body {
@@ -14,6 +19,9 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   overflow-x: hidden;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @layer utilities {
@@ -22,15 +30,35 @@ body {
   }
   
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400;
+  }
+  
+  .gradient-text-ai {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 via-cyan-400 to-cyan-500;
   }
   
   .glass {
-    @apply bg-white/10 backdrop-blur-lg border border-white/20;
+    @apply bg-white/[0.03] backdrop-blur-xl border border-white/5;
   }
   
-  .glass-dark {
-    @apply bg-black/20 backdrop-blur-lg border border-white/10;
+  .glass-strong {
+    @apply bg-white/[0.08] backdrop-blur-xl border border-white/10;
+  }
+  
+  .surface {
+    @apply bg-[#0f1624];
+  }
+  
+  .surface-elevated {
+    @apply bg-[#151b2e];
+  }
+  
+  .glow-cyan {
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.15), 0 0 40px rgba(0, 217, 255, 0.1);
+  }
+  
+  .glow-blue {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.15), 0 0 40px rgba(59, 130, 246, 0.1);
   }
 }
 
@@ -41,19 +69,25 @@ html {
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0a0f;
+  background: #0a0e1a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #8b5cf6, #ec4899, #06b6d4);
-  border-radius: 5px;
+  background: linear-gradient(180deg, #00d9ff, #3b82f6);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #a78bfa, #f472b6, #22d3ee);
+  background: linear-gradient(180deg, #22e3ff, #60a5fa);
+}
+
+/* Selection */
+::selection {
+  background: rgba(0, 217, 255, 0.3);
+  color: #ffffff;
 }
 
