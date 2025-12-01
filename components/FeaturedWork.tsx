@@ -47,26 +47,32 @@ export default function FeaturedWork() {
       tech: "React/Next.js, serverless backend, AI image generation APIs (Stable Diffusion)"
     },
     {
-      title: "Pop Quiz – Multi-Platform Exam App",
-      subtitle: "USMLE-Style Exam Practice App",
-      role: "Solo Developer",
-      problem: "Existing question banks are powerful but heavy; I wanted a lightweight, focused test experience that works everywhere with clean analytics.",
+      title: "AI Flashcard Engine for Med Students",
+      subtitle: "AI-Powered Learning Platform",
+      role: "Founder & Technical Architect",
+      problem: "Med students rely heavily on flashcards, but most tools require too much manual effort: manually creating cards, tagging concepts, reorganizing decks, and scheduling reviews. This turns study tools into work instead of acceleration.",
       solution: [
-        "Runs on iOS, Android, Web, Windows, and macOS",
-        "Pulls questions and explanations from Firebase",
-        "Shows per-question feedback, explanations, and end-of-test analytics",
-        "Supports categories and USMLE-style test structures"
+        "Auto-generate high-quality flashcards from PDFs, lecture notes, or textbook excerpts",
+        "Extract concepts and generate tags & categories automatically",
+        "Summarize sessions and create adaptive study plans",
+        "Build spaced-repetition schedules using an AI-informed algorithm",
+        "Support long-form explanations, comparisons, diagrams, clinical vignettes, and rapid-fire recall questions"
       ],
       roleDetails: [
-        "Designed the folder structure and Clean Architecture layers",
-        "Implemented fake repositories for fast iteration, then Firebase-backed data sources",
-        "Designed the test flow, result analytics, and offline caching strategy"
+        "Defined the MVP specification centered on text → flashcard pipelines",
+        "Designed the AI processing layer (LLM prompt design, chunking, hallucination controls, and verification logic)",
+        "Built the backend card-generation engine using serverless functions",
+        "Designed the data model for cards, decks, tags, categories, and review history",
+        "Mapped out adaptive SRS logic that dynamically reschedules cards based on AI analysis",
+        "Created the product roadmap, UX flows, and future expansion plan (e.g., extraction from YouTube lectures, medical diagrams, and board-style questions)"
       ],
       impact: [
-        "Demonstrates cross-platform execution and a clean architecture pattern",
-        "Provides a solid foundation to scale into a full commercial exam platform"
+        "Reduces card creation time from hours → seconds",
+        "Produces higher-quality, clinically relevant cards compared to manual writing",
+        "Lays the foundation for a broader AI study ecosystem (vignette generator, study session analytics, auto-deck builder)",
+        "Provides a scalable tool that can expand beyond medicine into any field that relies on mastery learning"
       ],
-      tech: "Flutter, Firebase/Firestore, Dart, Clean Architecture"
+      tech: "LLMs / OpenAI APIs, Python / Node microservices, Chunking/embeddings/retrieval, React or Flutter front-end, Cloud serverless architecture (Firebase/Firestore or Supabase)"
     },
     {
       title: "STR Systems – Short-Term Rental Tech & Operations",

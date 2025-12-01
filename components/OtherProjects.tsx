@@ -6,9 +6,9 @@ export default function OtherProjects() {
       tech: ["Mobile", "Streaming", "Real-time"]
     },
     {
-      title: "AI Flashcard Engine for Med Students",
-      description: "Designed an MVP for a platform that auto-generates and schedules flashcards from PDFs, YouTube lectures, and notes using AI.",
-      tech: ["AI", "Flutter", "Firebase"]
+      title: "Pop Quiz – Multi-Platform Exam App",
+      description: "A lightweight, multi-platform USMLE-style exam simulator built in Flutter. Features timed and untimed exam modes, instant answer feedback with explanations, category-based filtering, end-of-test analytics, and cloud-backed question sets.",
+      tech: ["Flutter", "Firebase", "Dart", "Cross-Platform"]
     },
     {
       title: "IoT Sensor Experiments for Medical Wearables",
