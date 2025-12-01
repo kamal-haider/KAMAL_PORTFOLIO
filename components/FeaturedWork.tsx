@@ -92,67 +92,82 @@ export default function FeaturedWork() {
     }
   ];
 
+  const gradientColors = [
+    'from-purple-500/20 to-pink-500/20',
+    'from-cyan-500/20 to-blue-500/20',
+    'from-pink-500/20 to-purple-500/20',
+    'from-blue-500/20 to-cyan-500/20',
+  ];
+
   return (
-    <section id="work" className="py-24 px-6 bg-white">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-16 text-center">
-          Featured Work
+    <section id="work" className="relative py-24 px-6 bg-gradient-to-b from-slate-900 via-purple-900/10 to-slate-900">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(139,92,246,0.1),transparent_50%)]"></div>
+      <div className="max-w-6xl mx-auto relative z-10">
+        <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
+          <span className="gradient-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
+            Featured Work
+          </span>
         </h2>
         
         <div className="space-y-24">
           {projects.map((project, index) => (
-            <div key={index} className="border-t border-gray-200 pt-16">
-              <div className="mb-8">
-                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
-                  {project.title}
-                </h3>
-                <p className="text-xl text-gray-600 mb-4">{project.subtitle}</p>
-                <p className="text-sm text-gray-500 font-medium">{project.role}</p>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-12 mb-8">
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-3">Problem</h4>
-                  <p className="text-gray-700 leading-relaxed mb-6">{project.problem}</p>
-                  
-                  <h4 className="text-lg font-semibold text-gray-900 mb-3">Solution</h4>
-                  <ul className="space-y-2 text-gray-700">
-                    {project.solution.map((item, i) => (
-                      <li key={i} className="flex items-start">
-                        <span className="text-gray-900 mr-2">•</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+            <div key={index} className="group relative">
+              <div className={`absolute inset-0 bg-gradient-to-r ${gradientColors[index % gradientColors.length]} rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+              <div className="relative glass rounded-2xl p-8 md:p-12 border border-white/10 hover:border-white/30 transition-all duration-300 hover:scale-[1.02]">
+                <div className="mb-8">
+                  <h3 className="text-3xl md:text-4xl font-bold text-white mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-xl text-slate-300 mb-4">{project.subtitle}</p>
+                  <span className="inline-block px-4 py-1 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 rounded-full text-sm text-purple-300 font-medium">
+                    {project.role}
+                  </span>
                 </div>
 
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-3">My Role</h4>
-                  <ul className="space-y-2 text-gray-700 mb-6">
-                    {project.roleDetails.map((item, i) => (
-                      <li key={i} className="flex items-start">
-                        <span className="text-gray-900 mr-2">•</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <div className="grid md:grid-cols-2 gap-12 mb-8">
+                  <div>
+                    <h4 className="text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-3">Problem</h4>
+                    <p className="text-slate-300 leading-relaxed mb-6">{project.problem}</p>
+                    
+                    <h4 className="text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 mb-3">Solution</h4>
+                    <ul className="space-y-2 text-slate-300">
+                      {project.solution.map((item, i) => (
+                        <li key={i} className="flex items-start">
+                          <span className="text-cyan-400 mr-3 mt-1">▸</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-                  <h4 className="text-lg font-semibold text-gray-900 mb-3">Impact</h4>
-                  <ul className="space-y-2 text-gray-700">
-                    {project.impact.map((item, i) => (
-                      <li key={i} className="flex items-start">
-                        <span className="text-gray-900 mr-2">•</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <div>
+                    <h4 className="text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400 mb-3">My Role</h4>
+                    <ul className="space-y-2 text-slate-300 mb-6">
+                      {project.roleDetails.map((item, i) => (
+                        <li key={i} className="flex items-start">
+                          <span className="text-pink-400 mr-3 mt-1">▸</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <h4 className="text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 mb-3">Impact</h4>
+                    <ul className="space-y-2 text-slate-300">
+                      {project.impact.map((item, i) => (
+                        <li key={i} className="flex items-start">
+                          <span className="text-blue-400 mr-3 mt-1">▸</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-              </div>
 
-              <div className="pt-6 border-t border-gray-100">
-                <p className="text-sm text-gray-600">
-                  <span className="font-semibold text-gray-900">Tech:</span> {project.tech}
-                </p>
+                <div className="pt-6 border-t border-white/10">
+                  <p className="text-sm text-slate-400">
+                    <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Tech:</span> <span className="text-slate-300">{project.tech}</span>
+                  </p>
+                </div>
               </div>
             </div>
           ))}
