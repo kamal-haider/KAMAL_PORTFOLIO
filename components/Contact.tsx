@@ -17,18 +17,18 @@ export default function Contact() {
 
         <div className="space-y-6">
           <a
-            href="mailto:youremail@domain.com"
+            href="mailto:mr.haiderk@gmail.com"
             className="group block glass rounded-xl p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20"
           >
             <div className="flex items-center justify-center gap-3">
               <span className="text-2xl">✉️</span>
               <span className="text-lg text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 transition-all">
-                Email: youremail@domain.com
+                mr.haiderk@gmail.com
               </span>
             </div>
           </a>
           <a
-            href="https://linkedin.com/in/yourprofile"
+            href="https://www.linkedin.com/in/kamal-haider/"
             target="_blank"
             rel="noopener noreferrer"
             className="group block glass rounded-xl p-6 border border-white/10 hover:border-blue-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/20"
@@ -36,12 +36,12 @@ export default function Contact() {
             <div className="flex items-center justify-center gap-3">
               <span className="text-2xl">💼</span>
               <span className="text-lg text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-cyan-400 transition-all">
-                LinkedIn: [link]
+                LinkedIn Profile
               </span>
             </div>
           </a>
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/kamal-haider"
             target="_blank"
             rel="noopener noreferrer"
             className="group block glass rounded-xl p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20"
@@ -49,7 +49,7 @@ export default function Contact() {
             <div className="flex items-center justify-center gap-3">
               <span className="text-2xl">💻</span>
               <span className="text-lg text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 transition-all">
-                GitHub: [link]
+                GitHub Profile
               </span>
             </div>
           </a>
