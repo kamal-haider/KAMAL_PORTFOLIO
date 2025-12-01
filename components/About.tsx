@@ -12,7 +12,7 @@ export default function About() {
 
         <div className="glass rounded-2xl p-8 md:p-12 border border-white/10 space-y-8">
           <p className="text-lg md:text-xl leading-relaxed text-slate-200">
-            I'm a builder who likes to see the whole board — from the code architecture to the product roadmap to how it ties into a real business.
+            I'm an AI-first builder who architects intelligent systems from the ground up — designing LLM integration layers, building AI processing pipelines, and turning complex AI capabilities into production-ready products that deliver real value.
           </p>
 
           <div>
@@ -21,20 +21,20 @@ export default function About() {
             </p>
             <ul className="space-y-3 text-lg">
               <li className="flex items-start text-slate-300">
-                <span className="text-cyan-400 mr-3 mt-1 text-xl">▸</span>
-                <span>Designed and shipped cross-platform apps in Flutter</span>
-              </li>
-              <li className="flex items-start text-slate-300">
                 <span className="text-pink-400 mr-3 mt-1 text-xl">▸</span>
-                <span>Architected AI-driven products like Roomzy and a med-focused flashcard engine</span>
+                <span>Architected AI-powered products like Roomzy (image generation) and an AI flashcard engine (LLM-driven learning)</span>
               </li>
               <li className="flex items-start text-slate-300">
                 <span className="text-purple-400 mr-3 mt-1 text-xl">▸</span>
-                <span>Built and operated profitable short-term rentals end-to-end</span>
+                <span>Built end-to-end AI systems: prompt engineering, chunking pipelines, hallucination controls, and adaptive algorithms</span>
+              </li>
+              <li className="flex items-start text-slate-300">
+                <span className="text-cyan-400 mr-3 mt-1 text-xl">▸</span>
+                <span>Designed and shipped cross-platform apps with clean architecture and scalable backend systems</span>
               </li>
               <li className="flex items-start text-slate-300">
                 <span className="text-blue-400 mr-3 mt-1 text-xl">▸</span>
-                <span>Run multi-year personal "roadmaps" for fitness, income, and learning</span>
+                <span>Operated real businesses end-to-end, blending AI tech with practical operations and measurable outcomes</span>
               </li>
             </ul>
           </div>
@@ -45,16 +45,16 @@ export default function About() {
             </p>
             <ul className="space-y-3 text-lg">
               <li className="flex items-start text-slate-300">
-                <span className="text-cyan-400 mr-3 mt-1 text-xl">▸</span>
-                <span>Turning fuzzy ideas into clear, executable plans</span>
-              </li>
-              <li className="flex items-start text-slate-300">
                 <span className="text-pink-400 mr-3 mt-1 text-xl">▸</span>
-                <span>Owning projects from architecture through launch</span>
+                <span>Designing AI systems that solve real problems — from prompt engineering to production deployment</span>
               </li>
               <li className="flex items-start text-slate-300">
                 <span className="text-purple-400 mr-3 mt-1 text-xl">▸</span>
-                <span>Working with people who care about impact, craftsmanship, and long-term thinking</span>
+                <span>Owning AI products end-to-end: architecture, LLM integration, data pipelines, and user experience</span>
+              </li>
+              <li className="flex items-start text-slate-300">
+                <span className="text-cyan-400 mr-3 mt-1 text-xl">▸</span>
+                <span>Working with teams who care about AI impact, technical craftsmanship, and building the future</span>
               </li>
             </ul>
           </div>

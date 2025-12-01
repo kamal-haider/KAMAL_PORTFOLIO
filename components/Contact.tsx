@@ -12,7 +12,7 @@ export default function Contact() {
           </span>
         </h2>
         <p className="text-lg text-slate-300 mb-12 leading-relaxed">
-          If you're looking for someone who can own complex systems from architecture to execution — and is comfortable building in ambiguity — I'd love to talk.
+          If you're looking for someone who can architect AI-powered systems, integrate LLMs into production products, and turn complex AI capabilities into practical features — I'd love to talk.
         </p>
 
         <div className="space-y-6">

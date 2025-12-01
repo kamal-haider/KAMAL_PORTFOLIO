@@ -1,49 +1,96 @@
 export default function Experience() {
   const experiences = [
     {
-      title: "Senior Software Engineer / Technical Lead",
-      company: "[Company Name]",
-      years: "[Years]",
+      title: "Mobile Architect Owner",
+      company: "Norwegian Cruise Line (NCL)",
       description: [
-        "Led design and implementation of multi-platform apps, internal tools, and systems.",
-        "Worked across architecture, implementation, and mentoring.",
-        "Collaborated with product and operations teams to align tech with business goals."
+        "Lead mobile architecture and development for customer-facing travel applications",
+        "Manage and mentor a team of 8 developers across iOS and Android platforms",
+        "Design scalable architecture using Flutter for cross-platform support",
+        "Coordinate across backend, product, and design teams to drive feature implementation",
+        "Oversee CI/CD pipelines and automation tools, integrating Git and Ruby scripts"
+      ]
+    },
+    {
+      title: "Application Developer",
+      company: "CirrusMD",
+      description: [
+        "Built and maintained a telehealth Android app for appointment management and video chat",
+        "Integrated APIs to sync medical records and insurance coverage"
+      ]
+    },
+    {
+      title: "Senior Application Developer",
+      company: "Reatro Ventures",
+      description: [
+        "Developed several Flutter-based food ordering apps for iOS and Android",
+        "Designed smart menu system with user analytics and behavior tracking",
+        "Created cross-platform messaging and live performance payment apps",
+        "Led the design and delivery of REST-based API systems"
+      ]
+    },
+    {
+      title: "Android Developer",
+      company: "Cell Antenna",
+      description: [
+        "Built and reverse-engineered Android software for mobile surveillance and security",
+        "Developed IMSI-catcher tools for national security applications",
+        "Built Bash/Linux scripts for automated device testing",
+        "Managed SQL databases optimized for mobile hardware environments"
       ]
     }
-    // Add more experiences as needed
   ];
 
   const skills = {
-    "Architecture & Systems": [
-      "Clean Architecture",
-      "Domain-driven design basics",
-      "API design",
-      "Distributed-thinking"
+    "AI & Machine Learning": [
+      "LLM integration (OpenAI APIs, Anthropic)",
+      "Prompt engineering & optimization",
+      "AI processing pipelines (chunking, embeddings, retrieval)",
+      "Image generation APIs (Stable Diffusion)",
+      "Hallucination controls & verification logic",
+      "Adaptive AI algorithms"
     ],
-    "Languages & Frameworks": [
+    "Languages": [
       "Dart (Flutter)",
+      "Kotlin",
+      "Java",
+      "Python",
       "JavaScript/TypeScript",
+      "C#",
+      "Go",
+      "Ruby",
+      "SQL"
+    ],
+    "Frameworks & Platforms": [
+      "Flutter (iOS, Android, Web, macOS, Windows)",
+      "Android SDK",
       "React/Next.js",
       "Node.js",
-      "Python (for scripting/AI glue)"
+      "Express",
+      "Unity (C#)",
+      "Web3"
+    ],
+    "Architecture & Systems": [
+      "Clean Architecture",
+      "Domain-driven design",
+      "REST API design",
+      "Mobile architecture",
+      "Cross-platform development",
+      "CI/CD pipelines"
     ],
     "Cloud & Data": [
       "Firebase/Firestore",
       "Serverless (Cloud Functions)",
-      "REST APIs",
-      "Basic SQL/NoSQL modeling"
+      "MongoDB",
+      "SQL/NoSQL modeling",
+      "Vector databases & embeddings"
     ],
-    "AI & Tooling": [
-      "LLM integration (OpenAI APIs)",
-      "Prompt design",
-      "Basic image generation pipelines"
-    ],
-    "Ops & Product": [
-      "Product roadmapping",
-      "PRDs",
-      "MVP definition",
-      "Experimentation",
-      "KPI thinking"
+    "Tools & Practices": [
+      "Git",
+      "TDD",
+      "OAuth",
+      "Automation & scripting",
+      "Team leadership & mentoring"
     ]
   };
 
@@ -53,7 +100,7 @@ export default function Experience() {
       <div className="max-w-6xl mx-auto relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
           <span className="gradient-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-            Experience & Skills
+            AI Expertise & Technical Skills
           </span>
         </h2>
 
@@ -70,7 +117,7 @@ export default function Experience() {
                       {exp.title}
                     </h4>
                     <p className="text-slate-300 mb-4">
-                      {exp.company} – {exp.years}
+                      {exp.company}
                     </p>
                     <ul className="space-y-2 text-slate-300">
                       {exp.description.map((item, i) => (

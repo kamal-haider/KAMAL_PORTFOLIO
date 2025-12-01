@@ -33,10 +33,10 @@ export default function Hero() {
           </span>
         </h1>
         <h2 className="text-2xl md:text-3xl font-semibold text-slate-200 mb-8">
-          Technical Leader & Product-Focused Builder
+          AI-First Technical Leader & Product Architect
         </h2>
         <p className="text-lg md:text-xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-          I design and ship systems end-to-end — from architecture and AI-driven apps to real-world operations — and help teams move from idea to production with clarity and speed.
+          I architect and ship AI-powered systems end-to-end — from LLM integration and intelligent automation to scalable product platforms. I turn complex AI capabilities into practical, user-facing features that deliver real value.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -63,33 +63,33 @@ export default function Hero() {
 
         {/* Pillars */}
         <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="group p-6 glass rounded-xl border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20">
-            <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-700 rounded-lg mb-4 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
-              🏗️
-            </div>
-            <h3 className="font-semibold text-white mb-2">Systems & Architecture</h3>
-            <p className="text-sm text-slate-300">Clean, scalable designs across mobile, web, and backend.</p>
-          </div>
           <div className="group p-6 glass rounded-xl border border-white/10 hover:border-pink-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-pink-500/20">
             <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-700 rounded-lg mb-4 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
               🤖
             </div>
-            <h3 className="font-semibold text-white mb-2">AI & Product Execution</h3>
-            <p className="text-sm text-slate-300">Turn vague ideas into shipped features with real users.</p>
+            <h3 className="font-semibold text-white mb-2">AI Integration & LLMs</h3>
+            <p className="text-sm text-slate-300">Build intelligent systems with LLM APIs, prompt engineering, and AI-driven automation.</p>
+          </div>
+          <div className="group p-6 glass rounded-xl border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20">
+            <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-700 rounded-lg mb-4 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+              🏗️
+            </div>
+            <h3 className="font-semibold text-white mb-2">AI Product Architecture</h3>
+            <p className="text-sm text-slate-300">Design scalable systems that integrate AI capabilities into production-ready products.</p>
           </div>
           <div className="group p-6 glass rounded-xl border border-white/10 hover:border-cyan-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-cyan-500/20">
             <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-700 rounded-lg mb-4 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
               ⚡
             </div>
-            <h3 className="font-semibold text-white mb-2">Real-World Ops</h3>
-            <p className="text-sm text-slate-300">Built revenue-generating short-term rentals and business systems.</p>
+            <h3 className="font-semibold text-white mb-2">End-to-End Execution</h3>
+            <p className="text-sm text-slate-300">From AI research to shipped features — architecture, implementation, and real-world deployment.</p>
           </div>
           <div className="group p-6 glass rounded-xl border border-white/10 hover:border-blue-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/20">
             <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg mb-4 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
-              📚
+              🎯
             </div>
-            <h3 className="font-semibold text-white mb-2">Teaching & Tools</h3>
-            <p className="text-sm text-slate-300">Learning platforms, flashcard engines, and productivity apps.</p>
+            <h3 className="font-semibold text-white mb-2">Product Strategy</h3>
+            <p className="text-sm text-slate-300">Define roadmaps, MVPs, and go-to-market strategies for AI-powered products.</p>
           </div>
         </div>
       </div>

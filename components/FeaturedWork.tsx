@@ -1,52 +1,6 @@
 export default function FeaturedWork() {
   const projects = [
     {
-      title: "Marathons – Infinite Hierarchy Task Manager",
-      subtitle: "Deep Hierarchy Task & Progress Platform",
-      role: "Solo Architect & Lead Developer",
-      problem: "Most to-do apps collapse once tasks get deeply nested or complex. I wanted a system where projects could have infinite subtasks, real progress tracking, and a clean UX, all while staying fast and sync-friendly.",
-      solution: [
-        "Infinite nesting of tasks and subtasks (tree structure)",
-        "Linked-list ordering for flexible drag-and-drop reordering",
-        "Recursive progress calculation handled locally for performance",
-        "Real-time sync and offline-first behavior with Firebase"
-      ],
-      roleDetails: [
-        "Defined the domain model (Task, TaskDTO, progress computation)",
-        "Designed Clean Architecture layers (presentation / application / domain / data)",
-        "Implemented the core Flutter app (mobile + web)",
-        "Wrote the PRD, feature specs, and architecture docs"
-      ],
-      impact: [
-        "Handles arbitrarily deep hierarchies without performance collapse",
-        "Enables intuitive drag-and-drop reordering without expensive DB writes",
-        "Serves as a foundation for a future collaborative productivity platform"
-      ],
-      tech: "Flutter, Firebase/Firestore, Clean Architecture, Riverpod, Dart"
-    },
-    {
-      title: "Roomzy – AI-Powered Virtual Home Staging",
-      subtitle: "AI Virtual Home Staging SaaS",
-      role: "Founder & Product Architect",
-      problem: "Real estate agents and hosts need high-quality listing photos, but traditional staging is expensive and slow.",
-      solution: [
-        "Lets users upload empty room photos and generate staged variants in seconds",
-        "Targets real estate agents, Airbnb hosts, and photographers",
-        "Supports freemium, pay-as-you-go, and subscription pricing"
-      ],
-      roleDetails: [
-        "Defined the full product roadmap and go-to-market strategy",
-        "Designed the MVP architecture: frontend app, AI integration layer, and backend APIs",
-        "Led branding, landing page copy, and early marketing experiments",
-        "Integrated business metrics into the product (conversion points, retention levers)"
-      ],
-      impact: [
-        "Created a scalable digital product that can operate independent of my time",
-        "Designed a pipeline toward recurring revenue and a productizable service"
-      ],
-      tech: "React/Next.js, serverless backend, AI image generation APIs (Stable Diffusion)"
-    },
-    {
       title: "AI Flashcard Engine for Med Students",
       subtitle: "AI-Powered Learning Platform",
       role: "Founder & Technical Architect",
@@ -73,6 +27,52 @@ export default function FeaturedWork() {
         "Provides a scalable tool that can expand beyond medicine into any field that relies on mastery learning"
       ],
       tech: "LLMs / OpenAI APIs, Python / Node microservices, Chunking/embeddings/retrieval, React or Flutter front-end, Cloud serverless architecture (Firebase/Firestore or Supabase)"
+    },
+    {
+      title: "Roomzy – AI-Powered Virtual Home Staging",
+      subtitle: "AI Virtual Home Staging SaaS",
+      role: "Founder & Product Architect",
+      problem: "Real estate agents and hosts need high-quality listing photos, but traditional staging is expensive and slow.",
+      solution: [
+        "Lets users upload empty room photos and generate staged variants in seconds",
+        "Targets real estate agents, Airbnb hosts, and photographers",
+        "Supports freemium, pay-as-you-go, and subscription pricing"
+      ],
+      roleDetails: [
+        "Defined the full product roadmap and go-to-market strategy",
+        "Designed the MVP architecture: frontend app, AI integration layer, and backend APIs",
+        "Led branding, landing page copy, and early marketing experiments",
+        "Integrated business metrics into the product (conversion points, retention levers)"
+      ],
+      impact: [
+        "Created a scalable digital product that can operate independent of my time",
+        "Designed a pipeline toward recurring revenue and a productizable service"
+      ],
+      tech: "React/Next.js, serverless backend, AI image generation APIs (Stable Diffusion)"
+    },
+    {
+      title: "Marathons – Infinite Hierarchy Task Manager",
+      subtitle: "Deep Hierarchy Task & Progress Platform",
+      role: "Solo Architect & Lead Developer",
+      problem: "Most to-do apps collapse once tasks get deeply nested or complex. I wanted a system where projects could have infinite subtasks, real progress tracking, and a clean UX, all while staying fast and sync-friendly.",
+      solution: [
+        "Infinite nesting of tasks and subtasks (tree structure)",
+        "Linked-list ordering for flexible drag-and-drop reordering",
+        "Recursive progress calculation handled locally for performance",
+        "Real-time sync and offline-first behavior with Firebase"
+      ],
+      roleDetails: [
+        "Defined the domain model (Task, TaskDTO, progress computation)",
+        "Designed Clean Architecture layers (presentation / application / domain / data)",
+        "Implemented the core Flutter app (mobile + web)",
+        "Wrote the PRD, feature specs, and architecture docs"
+      ],
+      impact: [
+        "Handles arbitrarily deep hierarchies without performance collapse",
+        "Enables intuitive drag-and-drop reordering without expensive DB writes",
+        "Serves as a foundation for a future collaborative productivity platform"
+      ],
+      tech: "Flutter, Firebase/Firestore, Clean Architecture, Riverpod, Dart"
     },
     {
       title: "STR Systems – Short-Term Rental Tech & Operations",
@@ -111,7 +111,7 @@ export default function FeaturedWork() {
       <div className="max-w-6xl mx-auto relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
           <span className="gradient-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-            Featured Work
+            AI-Powered Projects
           </span>
         </h2>
         
