@@ -40,7 +40,7 @@ export default function About() {
             <div>
               <h3 className="text-lg font-semibold text-cyan-300 mb-4 flex items-center gap-2">
                 <span className="w-1 h-6 bg-gradient-to-b from-cyan-400 to-blue-400 rounded-full"></span>
-                What I've Built
+                What I&apos;ve Built
               </h3>
               <ul className="space-y-3 text-white/70">
                 <li className="flex items-start gap-3">

@@ -16,12 +16,12 @@ export default function Contact() {
             <span className="text-sm font-medium text-cyan-300">Get In Touch</span>
           </div>
           <h2 className="text-5xl md:text-6xl font-bold mb-6">
-            <span className="text-white">Let's Build</span>
+            <span className="text-white">Let&apos;s Build</span>
             <br />
             <span className="gradient-text-ai">Together</span>
           </h2>
           <p className="text-lg text-white/60 leading-relaxed max-w-2xl mx-auto">
-            If you're looking for someone who can build AI-powered mobile apps, integrate LLMs into iOS and Android applications, and create intelligent mobile experiences — I'd love to talk.
+            If you&apos;re looking for someone who can build AI-powered mobile apps, integrate LLMs into iOS and Android applications, and create intelligent mobile experiences — I&apos;d love to talk.
           </p>
         </div>
 
