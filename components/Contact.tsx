@@ -21,7 +21,7 @@ export default function Contact() {
             <span className="gradient-text-ai">Together</span>
           </h2>
           <p className="text-lg text-white/60 leading-relaxed max-w-2xl mx-auto">
-            If you're looking for someone who can architect AI-powered systems, integrate LLMs into production products, and turn complex AI capabilities into practical features — I'd love to talk.
+            If you're looking for someone who can build AI-powered mobile apps, integrate LLMs into iOS and Android applications, and create intelligent mobile experiences — I'd love to talk.
           </p>
         </div>
 

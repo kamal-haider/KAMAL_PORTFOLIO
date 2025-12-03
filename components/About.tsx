@@ -12,9 +12,9 @@ export default function About() {
             <span className="text-sm font-medium text-cyan-300">About</span>
           </div>
           <h2 className="text-5xl md:text-6xl font-bold mb-6">
-            <span className="text-white">AI-First</span>
+            <span className="text-white">AI Mobile</span>
             <br />
-            <span className="gradient-text-ai">Builder</span>
+            <span className="gradient-text-ai">Engineer</span>
           </h2>
         </div>
 
@@ -24,7 +24,7 @@ export default function About() {
           <div className="space-y-8">
             <div className="glass-strong rounded-2xl p-8 border border-white/5">
               <p className="text-xl leading-relaxed text-white/80 mb-6">
-                I architect intelligent systems from the ground up — designing LLM integration layers, building AI processing pipelines, and turning complex AI capabilities into production-ready products that deliver real value.
+                I build mobile applications that seamlessly integrate AI capabilities — from LLM-powered features and on-device intelligence to cross-platform AI experiences. I specialize in bringing AI to iOS and Android apps in ways that feel native, performant, and genuinely useful.
               </p>
 
               <div className="pt-6 border-t border-white/5">
@@ -45,19 +45,19 @@ export default function About() {
               <ul className="space-y-3 text-white/70">
                 <li className="flex items-start gap-3">
                   <span className="text-cyan-400 mt-1.5 text-lg">→</span>
-                  <span>Architected AI-powered products like Roomzy (image generation) and an AI flashcard engine (LLM-driven learning)</span>
+                  <span>Built AI-powered mobile apps integrating LLM APIs, on-device AI models, and intelligent features for iOS and Android</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-cyan-400 mt-1.5 text-lg">→</span>
-                  <span>Built end-to-end AI systems: prompt engineering, chunking pipelines, hallucination controls, and adaptive algorithms</span>
+                  <span>Architected mobile AI systems: prompt engineering for mobile, efficient API integration, offline AI capabilities, and adaptive mobile algorithms</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-cyan-400 mt-1.5 text-lg">→</span>
-                  <span>Designed and shipped cross-platform apps with clean architecture and scalable backend systems</span>
+                  <span>Designed and shipped cross-platform Flutter apps with AI features, clean architecture, and mobile-optimized AI pipelines</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-cyan-400 mt-1.5 text-lg">→</span>
-                  <span>Operated real businesses end-to-end, blending AI tech with practical operations and measurable outcomes</span>
+                  <span>Led mobile teams building production AI features, from architecture to deployment across iOS, Android, and web platforms</span>
                 </li>
               </ul>
             </div>
@@ -70,15 +70,15 @@ export default function About() {
               <ul className="space-y-3 text-white/70">
                 <li className="flex items-start gap-3">
                   <span className="text-blue-400 mt-1.5 text-lg">→</span>
-                  <span>Designing AI systems that solve real problems — from prompt engineering to production deployment</span>
+                  <span>Building mobile AI features that feel native and performant — from on-device models to cloud LLM integration</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-blue-400 mt-1.5 text-lg">→</span>
-                  <span>Owning AI products end-to-end: architecture, LLM integration, data pipelines, and user experience</span>
+                  <span>Owning mobile AI products end-to-end: architecture, LLM integration in mobile apps, efficient data pipelines, and polished UX</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-blue-400 mt-1.5 text-lg">→</span>
-                  <span>Working with teams who care about AI impact, technical craftsmanship, and building the future</span>
+                  <span>Working with teams building AI-powered mobile experiences that combine technical excellence with real user value</span>
                 </li>
               </ul>
             </div>

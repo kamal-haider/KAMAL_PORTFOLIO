@@ -32,19 +32,19 @@ export default function Hero() {
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-strong border border-cyan-500/20">
                 <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse-slow"></span>
-                <span className="text-sm font-medium text-cyan-300">AI-First Technical Leader</span>
+                <span className="text-sm font-medium text-cyan-300">AI Mobile Engineer</span>
               </div>
               
               <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.1] tracking-tight">
-                <span className="text-white">Building</span>
+                <span className="text-white">AI-Powered</span>
                 <br />
-                <span className="gradient-text-ai">AI Systems</span>
+                <span className="gradient-text-ai">Mobile Apps</span>
                 <br />
-                <span className="text-white/80">That Matter</span>
+                <span className="text-white/80">That Deliver</span>
               </h1>
               
               <p className="text-xl md:text-2xl text-white/60 leading-relaxed max-w-2xl">
-                I architect and ship AI-powered products end-to-end — from LLM integration and intelligent automation to scalable platforms that deliver real value.
+                I build mobile applications that seamlessly integrate AI capabilities — from LLM-powered features and on-device intelligence to cross-platform AI experiences on iOS and Android.
               </p>
             </div>
 
@@ -72,36 +72,36 @@ export default function Hero() {
             <div className="glass-strong rounded-2xl p-6 border border-cyan-500/10 hover:border-cyan-500/30 transition-all duration-300">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center">
-                  <span className="text-xl">🤖</span>
+                  <span className="text-xl">📱</span>
                 </div>
-                <h3 className="text-lg font-bold text-white">LLM Integration</h3>
+                <h3 className="text-lg font-bold text-white">Mobile AI Integration</h3>
               </div>
               <p className="text-sm text-white/60 leading-relaxed">
-                OpenAI, Anthropic APIs, prompt engineering, and production-ready AI pipelines
+                LLM APIs in mobile apps, on-device AI models, and intelligent mobile features across iOS and Android
               </p>
             </div>
 
             <div className="glass-strong rounded-2xl p-6 border border-blue-500/10 hover:border-blue-500/30 transition-all duration-300">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center">
-                  <span className="text-xl">⚡</span>
+                  <span className="text-xl">🤖</span>
                 </div>
-                <h3 className="text-lg font-bold text-white">AI Architecture</h3>
+                <h3 className="text-lg font-bold text-white">AI-First Mobile</h3>
               </div>
               <p className="text-sm text-white/60 leading-relaxed">
-                End-to-end AI systems: chunking, embeddings, retrieval, hallucination controls
+                Cross-platform AI features in Flutter, native AI capabilities, and mobile-optimized AI pipelines
               </p>
             </div>
 
             <div className="glass-strong rounded-2xl p-6 border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500 to-cyan-500 flex items-center justify-center">
-                  <span className="text-xl">🚀</span>
+                  <span className="text-xl">⚡</span>
                 </div>
-                <h3 className="text-lg font-bold text-white">Product Execution</h3>
+                <h3 className="text-lg font-bold text-white">Production Mobile</h3>
               </div>
               <p className="text-sm text-white/60 leading-relaxed">
-                From AI research to shipped features — architecture, implementation, deployment
+                From AI architecture to shipped mobile apps — clean code, scalable patterns, real-world deployment
               </p>
             </div>
           </div>
@@ -110,25 +110,25 @@ export default function Hero() {
         {/* Bottom section - Quick stats/pillars */}
         <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-6">
           <div className="text-center">
-            <div className="text-3xl font-bold gradient-text-ai mb-2">AI-First</div>
-            <div className="text-sm text-white/50">Core Focus</div>
+            <div className="text-3xl font-bold gradient-text-ai mb-2">Mobile</div>
+            <div className="text-sm text-white/50">iOS & Android</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold gradient-text-ai mb-2">End-to-End</div>
-            <div className="text-sm text-white/50">Full Stack</div>
+            <div className="text-3xl font-bold gradient-text-ai mb-2">AI-Powered</div>
+            <div className="text-sm text-white/50">LLM Integration</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold gradient-text-ai mb-2">Cross-Platform</div>
+            <div className="text-sm text-white/50">Flutter Expert</div>
           </div>
           <div className="text-center">
             <div className="text-3xl font-bold gradient-text-ai mb-2">Production</div>
-            <div className="text-sm text-white/50">Ready Systems</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold gradient-text-ai mb-2">Real Impact</div>
-            <div className="text-sm text-white/50">Measurable Results</div>
+            <div className="text-sm text-white/50">Shipped Apps</div>
           </div>
         </div>
 
         <p className="text-center text-sm text-white/40 mt-12 italic">
-          Currently exploring Staff / Principal / Technical Fellow opportunities
+          Currently exploring AI Mobile Engineer opportunities
         </p>
       </div>
     </section>

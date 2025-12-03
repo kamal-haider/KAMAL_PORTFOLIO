@@ -1,7 +1,7 @@
 export default function FeaturedWork() {
   const projects = [
     {
-      title: "AI Flashcard Engine",
+      title: "Moro",
       subtitle: "LLM-Driven Learning Platform",
       role: "Founder & Technical Architect",
       problem: "Med students rely heavily on flashcards, but most tools require too much manual effort: manually creating cards, tagging concepts, reorganizing decks, and scheduling reviews.",
@@ -13,18 +13,18 @@ export default function FeaturedWork() {
         "Support long-form explanations, comparisons, diagrams, clinical vignettes, and rapid-fire recall questions"
       ],
       roleDetails: [
-        "Defined the MVP specification centered on text → flashcard pipelines",
-        "Designed the AI processing layer (LLM prompt design, chunking, hallucination controls, and verification logic)",
-        "Built the backend card-generation engine using serverless functions",
-        "Designed the data model for cards, decks, tags, categories, and review history",
-        "Mapped out adaptive SRS logic that dynamically reschedules cards based on AI analysis"
+        "Defined the MVP specification for mobile-first AI flashcard generation",
+        "Designed mobile AI integration layer (LLM prompt design, efficient API calls, offline support)",
+        "Built Flutter mobile app with AI-powered card generation and adaptive study features",
+        "Architected backend card-generation engine using serverless functions optimized for mobile",
+        "Designed mobile-optimized data model and adaptive SRS logic with AI-driven rescheduling"
       ],
       impact: [
         "Reduces card creation time from hours → seconds",
         "Produces higher-quality, clinically relevant cards compared to manual writing",
         "Lays the foundation for a broader AI study ecosystem"
       ],
-      tech: "LLMs / OpenAI APIs, Python / Node microservices, Chunking/embeddings/retrieval, React or Flutter front-end, Cloud serverless architecture"
+      tech: "Flutter mobile app, LLMs / OpenAI APIs, Python / Node microservices, Chunking/embeddings/retrieval, Cloud serverless architecture, Mobile-optimized AI pipelines"
     },
     {
       title: "Roomzy",
@@ -37,10 +37,10 @@ export default function FeaturedWork() {
         "Supports freemium, pay-as-you-go, and subscription pricing"
       ],
       roleDetails: [
-        "Defined the full product roadmap and go-to-market strategy",
-        "Designed the MVP architecture: frontend app, AI integration layer, and backend APIs",
-        "Led branding, landing page copy, and early marketing experiments",
-        "Integrated business metrics into the product (conversion points, retention levers)"
+        "Defined the full product roadmap for mobile-first AI image generation",
+        "Designed mobile MVP architecture: React/Next.js web app with mobile-responsive design, AI integration layer, and backend APIs",
+        "Architected mobile-optimized image upload and generation pipeline",
+        "Led branding, landing page copy, and early marketing experiments with mobile user focus"
       ],
       impact: [
         "Created a scalable digital product that can operate independent of my time",
@@ -71,28 +71,6 @@ export default function FeaturedWork() {
         "Serves as a foundation for a future collaborative productivity platform"
       ],
       tech: "Flutter, Firebase/Firestore, Clean Architecture, Riverpod, Dart"
-    },
-    {
-      title: "STR Systems",
-      subtitle: "Short-Term Rental Tech & Operations",
-      role: "Founder / Operator",
-      problem: "Beyond software, I built an operational system around two short-term rental properties in South Florida.",
-      solution: [
-        "STR #1: Beachfront condo in Hollywood, FL",
-        "STR #2: Single-family home in Palmetto Bay, FL"
-      ],
-      roleDetails: [
-        "Automated pricing via tools like PriceLabs",
-        "Calendar, cleaning, and guest messaging workflows",
-        "Check-in/check-out systems (smart locks, access codes, guest instructions)",
-        "Compliance workflows (licenses, tax filings, insurance)"
-      ],
-      impact: [
-        "Direct experience running a real business with real constraints",
-        "Built systems that blend tech, operations, and customer experience",
-        "Reinforces my bias toward measurable outcomes, not 'just code'"
-      ],
-      tech: "PriceLabs, smart locks, automation tools, compliance systems"
     }
   ];
 
@@ -100,7 +78,7 @@ export default function FeaturedWork() {
     <section id="work" className="relative py-32 px-6 overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-[0.02] bg-[linear-gradient(to_right,#00d9ff_1px,transparent_1px),linear-gradient(to_bottom,#00d9ff_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
-      
+
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section header */}
         <div className="mb-20">
@@ -114,14 +92,14 @@ export default function FeaturedWork() {
             <span className="gradient-text-ai">Projects</span>
           </h2>
         </div>
-        
+
         {/* Projects grid - alternating layout */}
         <div className="space-y-24">
           {projects.map((project, index) => {
             const isEven = index % 2 === 0;
             return (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className={`grid lg:grid-cols-12 gap-8 items-start ${isEven ? '' : 'lg:flex-row-reverse'}`}
               >
                 {/* Project info - alternating sides */}
@@ -136,7 +114,7 @@ export default function FeaturedWork() {
                       {project.title}
                     </h3>
                     <p className="text-lg text-cyan-300 mb-6">{project.subtitle}</p>
-                    
+
                     <div className="glass-strong rounded-xl p-6 border border-white/5 mb-6">
                       <h4 className="text-sm font-semibold text-cyan-300 mb-3 uppercase tracking-wider">Problem</h4>
                       <p className="text-white/70 leading-relaxed">{project.problem}</p>

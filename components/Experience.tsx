@@ -43,12 +43,12 @@ export default function Experience() {
 
   const skills = {
     "AI & Machine Learning": [
-      "LLM integration (OpenAI APIs, Anthropic)",
-      "Prompt engineering & optimization",
-      "AI processing pipelines (chunking, embeddings, retrieval)",
-      "Image generation APIs (Stable Diffusion)",
-      "Hallucination controls & verification logic",
-      "Adaptive AI algorithms"
+      "Mobile LLM integration (OpenAI, Anthropic in iOS/Android)",
+      "On-device AI models & mobile optimization",
+      "Mobile AI pipelines (efficient API calls, caching, offline)",
+      "Cross-platform AI features (Flutter + AI)",
+      "Mobile prompt engineering & optimization",
+      "AI-powered mobile UX patterns"
     ],
     "Languages": [
       "Dart (Flutter)",
@@ -121,7 +121,7 @@ export default function Experience() {
                 <span className="text-2xl">🤖</span>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-white">AI & Machine Learning</h3>
+                <h3 className="text-2xl font-bold text-white">Mobile AI & Machine Learning</h3>
                 <p className="text-sm text-cyan-300">Core Expertise</p>
               </div>
             </div>
