@@ -1,200 +1,302 @@
-export default function Experience() {
-  const experiences = [
-    {
-      title: "Mobile Architect Owner",
-      company: "Norwegian Cruise Line (NCL)",
-      description: [
-        "Lead mobile architecture and development for customer-facing travel applications",
-        "Manage and mentor a team of 8 developers across iOS and Android platforms",
-        "Design scalable architecture using Flutter for cross-platform support",
-        "Coordinate across backend, product, and design teams to drive feature implementation",
-        "Oversee CI/CD pipelines and automation tools, integrating Git and Ruby scripts"
-      ]
-    },
-    {
-      title: "Application Developer",
-      company: "CirrusMD",
-      description: [
-        "Built and maintained a telehealth Android app for appointment management and video chat",
-        "Integrated APIs to sync medical records and insurance coverage"
-      ]
-    },
-    {
-      title: "Senior Application Developer",
-      company: "Reatro Ventures",
-      description: [
-        "Developed several Flutter-based food ordering apps for iOS and Android",
-        "Designed smart menu system with user analytics and behavior tracking",
-        "Created cross-platform messaging and live performance payment apps",
-        "Led the design and delivery of REST-based API systems"
-      ]
-    },
-    {
-      title: "Android Developer",
-      company: "Cell Antenna",
-      description: [
-        "Built and reverse-engineered Android software for mobile surveillance and security",
-        "Developed IMSI-catcher tools for national security applications",
-        "Built Bash/Linux scripts for automated device testing",
-        "Managed SQL databases optimized for mobile hardware environments"
-      ]
-    }
-  ];
+'use client';
 
-  const skills = {
-    "AI & Machine Learning": [
-      "Mobile LLM integration (OpenAI, Anthropic in iOS/Android)",
-      "On-device AI models & mobile optimization",
-      "Mobile AI pipelines (efficient API calls, caching, offline)",
-      "Cross-platform AI features (Flutter + AI)",
-      "Mobile prompt engineering & optimization",
-      "AI-powered mobile UX patterns"
+import { useState, useRef, useEffect } from 'react';
+
+const experiences = [
+  {
+    id: 'ncl',
+    title: 'Mobile Architect Owner',
+    company: 'Norwegian Cruise Line',
+    description: [
+      'Lead mobile architecture for customer-facing travel apps',
+      'Manage team of 8 developers across iOS and Android',
+      'Design scalable cross-platform architecture with Flutter',
+      'Oversee CI/CD pipelines and automation tooling',
     ],
-    "Languages": [
-      "Dart (Flutter)",
-      "Kotlin",
-      "Java",
-      "Python",
-      "JavaScript/TypeScript",
-      "C#",
-      "Go",
-      "Ruby",
-      "SQL"
+  },
+  {
+    id: 'cirrusmd',
+    title: 'Application Developer',
+    company: 'CirrusMD',
+    description: [
+      'Built telehealth Android app for appointments and video chat',
+      'Integrated APIs for medical records and insurance sync',
     ],
-    "Frameworks & Platforms": [
-      "Flutter (iOS, Android, Web, macOS, Windows)",
-      "Android SDK",
-      "React/Next.js",
-      "Node.js",
-      "Express",
-      "Unity (C#)",
-      "Web3"
+  },
+  {
+    id: 'reatro',
+    title: 'Senior Application Developer',
+    company: 'Reatro Ventures',
+    description: [
+      'Developed Flutter food ordering apps for iOS and Android',
+      'Built smart menu system with user analytics tracking',
+      'Created cross-platform messaging and payment apps',
     ],
-    "Architecture & Systems": [
-      "Clean Architecture",
-      "Domain-driven design",
-      "REST API design",
-      "Mobile architecture",
-      "Cross-platform development",
-      "CI/CD pipelines"
+  },
+  {
+    id: 'cellantenna',
+    title: 'Android Developer',
+    company: 'Cell Antenna',
+    description: [
+      'Built Android software for mobile security applications',
+      'Developed device testing automation with Bash/Linux',
+      'Managed SQL databases for mobile hardware environments',
     ],
-    "Cloud & Data": [
-      "Firebase/Firestore",
-      "Serverless (Cloud Functions)",
-      "MongoDB",
-      "SQL/NoSQL modeling",
-      "Vector databases & embeddings"
-    ],
-    "Tools & Practices": [
-      "Git",
-      "TDD",
-      "OAuth",
-      "Automation & scripting",
-      "Team leadership & mentoring"
-    ]
-  };
+  },
+];
+
+const skills = {
+  'AI & ML': [
+    'Mobile LLM Integration',
+    'On-device AI Models',
+    'AI Pipeline Optimization',
+    'Prompt Engineering',
+  ],
+  'Mobile': [
+    'Flutter / Dart',
+    'Kotlin / Java',
+    'iOS / Android',
+    'Cross-platform',
+  ],
+  'Backend': [
+    'Node.js / Python',
+    'Firebase / Serverless',
+    'REST API Design',
+    'Vector Databases',
+  ],
+  'Architecture': [
+    'Clean Architecture',
+    'Domain-driven Design',
+    'CI/CD Pipelines',
+    'Team Leadership',
+  ],
+};
+
+function ExperienceNode({ exp, index, isActive, onClick }: {
+  exp: typeof experiences[0];
+  index: number;
+  isActive: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      className={`group relative w-full text-left transition-all duration-300 ${
+        isActive ? 'opacity-100' : 'opacity-60 hover:opacity-100'
+      }`}
+    >
+      {/* Node connector */}
+      <div className="absolute left-0 top-0 bottom-0 w-px">
+        <div className={`h-full transition-all duration-500 ${
+          isActive ? 'bg-neural' : 'bg-border'
+        }`} />
+      </div>
+
+      {/* Node dot */}
+      <div className="absolute left-0 top-3 -translate-x-1/2 z-10">
+        <div className={`w-3 h-3 rounded-full border-2 transition-all duration-300 ${
+          isActive
+            ? 'border-neural bg-neural shadow-[0_0_10px_rgba(0,255,224,0.5)]'
+            : 'border-border bg-void group-hover:border-neural/50'
+        }`} />
+      </div>
+
+      {/* Content */}
+      <div className="pl-8 py-3">
+        <div className="font-mono text-[10px] text-white/30 tracking-widest mb-1">
+          [{String(index + 1).padStart(2, '0')}]
+        </div>
+        <h4 className={`font-mono text-sm font-semibold transition-colors duration-300 ${
+          isActive ? 'text-neural' : 'text-white group-hover:text-white'
+        }`}>
+          {exp.title}
+        </h4>
+        <p className="text-xs text-white/50 mt-0.5">{exp.company}</p>
+      </div>
+    </button>
+  );
+}
+
+function SkillCategory({ category, skills, delay }: {
+  category: string;
+  skills: string[];
+  delay: number;
+}) {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => setIsVisible(true), delay);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [delay]);
 
   return (
-    <section id="experience" className="relative py-32 px-6 overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-[0.02] bg-[linear-gradient(to_right,#00d9ff_1px,transparent_1px),linear-gradient(to_bottom,#00d9ff_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
-      
+    <div
+      ref={ref}
+      className={`transition-all duration-700 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+      }`}
+    >
+      <h4 className="font-mono text-xs tracking-widest text-neural mb-4 flex items-center gap-2">
+        <span className="w-2 h-2 bg-neural/30 rounded-full" />
+        {category}
+      </h4>
+      <div className="space-y-2">
+        {skills.map((skill, i) => (
+          <div
+            key={i}
+            className="group flex items-center gap-3 text-sm text-white/60 hover:text-white transition-colors"
+          >
+            <span className="w-1 h-1 bg-white/20 rounded-full group-hover:bg-neural transition-colors" />
+            {skill}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default function Experience() {
+  const [activeExp, setActiveExp] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const currentExp = experiences[activeExp];
+
+  return (
+    <section id="experience" ref={sectionRef} className="relative py-32 px-6 overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 grid-pattern opacity-10" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section header */}
-        <div className="mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-strong border border-cyan-500/20 mb-6">
-            <span className="w-2 h-2 bg-cyan-400 rounded-full"></span>
-            <span className="text-sm font-medium text-cyan-300">Experience & Skills</span>
+        <div className={`mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="flex items-center gap-4 mb-6">
+            <div className="w-12 h-px bg-neural" />
+            <span className="font-mono text-xs tracking-widest text-neural">
+              EXPERIENCE_&_SKILLS
+            </span>
           </div>
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tight">
             <span className="text-white">Technical</span>
             <br />
-            <span className="gradient-text-ai">Expertise</span>
+            <span className="text-white/40">Background</span>
           </h2>
         </div>
 
-        {/* AI Skills - Prominently Featured First */}
-        <div className="mb-24">
-          <div className="glass-strong rounded-2xl p-8 border border-cyan-500/20 glow-cyan">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center">
-                <span className="text-2xl">🤖</span>
+        {/* Main content grid */}
+        <div className={`grid lg:grid-cols-12 gap-12 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          {/* Experience timeline - left */}
+          <div className="lg:col-span-4">
+            <div className="sticky top-32">
+              <h3 className="font-mono text-[10px] text-white/30 tracking-widest mb-6 uppercase">
+                Career Path
+              </h3>
+              <div className="space-y-0">
+                {experiences.map((exp, index) => (
+                  <ExperienceNode
+                    key={exp.id}
+                    exp={exp}
+                    index={index}
+                    isActive={activeExp === index}
+                    onClick={() => setActiveExp(index)}
+                  />
+                ))}
               </div>
-              <div>
-                <h3 className="text-2xl font-bold text-white">Mobile AI & Machine Learning</h3>
-                <p className="text-sm text-cyan-300">Core Expertise</p>
-              </div>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {skills["AI & Machine Learning"].map((skill, i) => (
-                <div
-                  key={i}
-                  className="px-4 py-3 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-200 text-sm font-medium hover:bg-cyan-500/15 hover:border-cyan-500/30 transition-all"
-                >
-                  {skill}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Two column layout */}
-        <div className="grid lg:grid-cols-2 gap-16">
-          {/* Experience */}
-          <div>
-            <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
-              <span className="w-1 h-8 bg-gradient-to-b from-cyan-400 to-blue-400 rounded-full"></span>
-              Professional Experience
-            </h3>
-            <div className="space-y-8">
-              {experiences.map((exp, index) => (
-                <div key={index} className="relative pl-8">
-                  <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-500/50 via-blue-500/50 to-purple-500/50"></div>
-                  <div className="absolute left-[-6px] top-0 w-4 h-4 bg-gradient-to-br from-cyan-400 to-blue-400 rounded-full border-2 border-[#0a0e1a]"></div>
-                  <div className="glass-strong rounded-xl p-6 border border-white/5">
-                    <h4 className="text-xl font-semibold text-white mb-1">
-                      {exp.title}
-                    </h4>
-                    <p className="text-cyan-300 mb-4 text-sm font-medium">
-                      {exp.company}
-                    </p>
-                    <ul className="space-y-2 text-white/70 text-sm">
-                      {exp.description.map((item, i) => (
-                        <li key={i} className="flex items-start gap-2">
-                          <span className="text-cyan-400 mt-1.5 text-xs">→</span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
 
-          {/* Skills */}
-          <div>
-            <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
-              <span className="w-1 h-8 bg-gradient-to-b from-blue-400 to-purple-400 rounded-full"></span>
-              Technical Skills
-            </h3>
-            <div className="space-y-6">
-              {Object.entries(skills).filter(([category]) => category !== "AI & Machine Learning").map(([category, items], catIndex) => (
-                <div key={category} className="glass-strong rounded-xl p-6 border border-white/5">
-                  <h4 className="text-lg font-semibold text-white mb-4">
-                    {category}
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {items.map((skill, i) => (
-                      <span
-                        key={i}
-                        className="px-3 py-1.5 text-xs font-medium bg-white/5 border border-white/10 text-white/70 rounded-lg hover:bg-white/10 hover:border-white/20 transition-all cursor-default"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
+          {/* Experience details - center */}
+          <div className="lg:col-span-4">
+            <div className="sticky top-32">
+              <div className="border border-border bg-surface/50 p-6 relative overflow-hidden">
+                {/* Corner accent */}
+                <div className="absolute top-0 left-0 w-8 h-8">
+                  <div className="absolute top-0 left-0 w-full h-px bg-neural" />
+                  <div className="absolute top-0 left-0 h-full w-px bg-neural" />
                 </div>
+
+                <div className="mb-4">
+                  <span className="font-mono text-[10px] text-white/30 tracking-widest">
+                    SELECTED_ROLE
+                  </span>
+                </div>
+
+                <h3 className="font-mono text-xl font-bold text-neural mb-1">
+                  {currentExp.title}
+                </h3>
+                <p className="text-sm text-white/50 mb-6">{currentExp.company}</p>
+
+                <div className="space-y-3">
+                  {currentExp.description.map((item, i) => (
+                    <div
+                      key={i}
+                      className="flex items-start gap-3 text-sm text-white/70"
+                    >
+                      <span className="text-neural mt-0.5">→</span>
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Navigation dots */}
+                <div className="flex items-center gap-2 mt-8 pt-6 border-t border-border">
+                  {experiences.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setActiveExp(i)}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        activeExp === i
+                          ? 'bg-neural w-6'
+                          : 'bg-white/20 hover:bg-white/40'
+                      }`}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Skills - right */}
+          <div className="lg:col-span-4">
+            <h3 className="font-mono text-[10px] text-white/30 tracking-widest mb-6 uppercase">
+              Core Skills
+            </h3>
+            <div className="grid grid-cols-2 gap-8">
+              {Object.entries(skills).map(([category, items], index) => (
+                <SkillCategory
+                  key={category}
+                  category={category}
+                  skills={items}
+                  delay={index * 100}
+                />
               ))}
             </div>
           </div>
