@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/KAMAL_PORTFOLIO',
+  // No basePath needed when using custom domain (CNAME)
   images: {
     unoptimized: true, // Required for static export
   },

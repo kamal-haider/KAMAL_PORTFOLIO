@@ -149,7 +149,7 @@ export default function Contact() {
                       {contact.command}
                     </span>
                     <span className="font-mono text-xs text-white/30 ml-auto hidden sm:block">
-                      // {contact.value}
+                      {'// '}{contact.value}
                     </span>
                     <span className={`w-2 h-2 rounded-full transition-all duration-300 ${
                       hoveredContact === contact.id
@@ -193,7 +193,7 @@ export default function Contact() {
         <div className="mt-24 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-white/30">
             <div className="font-mono text-xs">
-              <span className="text-neural">KAMAL.HAIDER</span> // AI Mobile Engineer
+              <span className="text-neural">KAMAL.HAIDER</span> {'// AI Mobile Engineer'}
             </div>
             <div className="font-mono text-[10px] tracking-wider">
               DESIGNED & BUILT WITH PURPOSE
