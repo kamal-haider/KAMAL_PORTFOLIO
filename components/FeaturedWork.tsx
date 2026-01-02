@@ -4,6 +4,20 @@ import { useState, useRef, useEffect } from 'react';
 
 const projects = [
   {
+    id: 'apex-iq',
+    title: 'APEX IQ',
+    subtitle: 'F1 Strategy Intelligence Platform',
+    description: 'Cross-platform app that explains why F1 races unfold the way they do. Data-driven strategy analysis, tire stint visualization, and driver comparisons powered by real race data.',
+    tech: ['Flutter', 'Firebase', 'TypeScript', 'OpenF1 API'],
+    highlights: [
+      'Strategy-first analysis with undercut/overcut detection',
+      'Cross-platform: iOS, Android & Web from single codebase',
+      'Backend proxy architecture with Cloud Functions',
+    ],
+    accent: 'synapse',
+    size: 'large',
+  },
+  {
     id: 'moro',
     title: 'MORO',
     subtitle: 'LLM-Driven Learning Platform',
