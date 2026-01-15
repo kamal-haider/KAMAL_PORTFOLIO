@@ -1,36 +1,87 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { JetBrains_Mono, Outfit } from "next/font/google";
 import "./globals.css";
 
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains",
+  display: "swap",
+});
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
+  display: "swap",
+});
+
+export const viewport: Viewport = {
+  themeColor: "#050508",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export const metadata: Metadata = {
-  title: "Kamal Haider - AI Mobile Engineer",
-  description: "Building AI-powered mobile applications that integrate LLMs, on-device intelligence, and intelligent features into production-ready iOS and Android apps.",
-  metadataBase: new URL('https://kamalhaider.ai'),
+  title: "NEURAL.LINK | Kamal Haider - AI Mobile Engineer",
+  description:
+    "Command center for AI-powered mobile experiences. Building production apps with LLMs, on-device intelligence, and cross-platform Flutter solutions for iOS and Android.",
+  metadataBase: new URL("https://kamalhaider.ai"),
+  keywords: [
+    "AI Mobile Engineer",
+    "Flutter Developer",
+    "iOS Developer",
+    "Android Developer",
+    "Mobile App Development",
+    "LLM Integration",
+    "OpenAI",
+    "Cross-Platform",
+    "React Native",
+    "Mobile Architecture",
+  ],
+  authors: [{ name: "Kamal Haider", url: "https://kamalhaider.ai" }],
+  creator: "Kamal Haider",
   openGraph: {
-    title: 'Kamal Haider - AI Mobile Engineer',
-    description: 'Building AI-powered mobile apps with LLMs, on-device intelligence, and cross-platform experiences.',
-    url: 'https://kamalhaider.ai',
-    siteName: 'Kamal Haider',
+    title: "NEURAL.LINK | Kamal Haider - AI Mobile Engineer",
+    description:
+      "Command center for AI-powered mobile experiences. Building production apps with LLMs and cross-platform solutions.",
+    url: "https://kamalhaider.ai",
+    siteName: "Kamal Haider",
     images: [
       {
-        url: '/og-image.png',
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: 'Kamal Haider - AI Mobile Engineer',
+        alt: "NEURAL.LINK - Kamal Haider Portfolio",
       },
     ],
-    locale: 'en_US',
-    type: 'website',
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Kamal Haider - AI Mobile Engineer',
-    description: 'Building AI-powered mobile apps with LLMs, on-device intelligence, and cross-platform experiences.',
-    images: ['/twitter-card.png'],
+    card: "summary_large_image",
+    title: "NEURAL.LINK | Kamal Haider - AI Mobile Engineer",
+    description:
+      "Command center for AI-powered mobile experiences. Building production apps with LLMs and cross-platform solutions.",
+    images: ["/twitter-card.png"],
+    creator: "@kamalhaider",
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
@@ -39,16 +90,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className="antialiased bg-void text-white">
+    <html
+      lang="en"
+      className={`${jetbrainsMono.variable} ${outfit.variable}`}
+      suppressHydrationWarning
+    >
+      <body className="font-sans antialiased bg-void text-text-primary">
         {children}
       </body>
     </html>
