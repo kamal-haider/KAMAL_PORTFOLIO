@@ -1,6 +1,26 @@
 # Job Applications Tracker
 
+## Indeed Applications
+
+### January 17, 2026
+
+| Job Title | Company | Salary Range | Location | Status |
+|-----------|---------|--------------|----------|--------|
+| Flutter Developer | Gray Media Group | $70,000 - $100,000/yr | Remote (US) | Applied ✓ |
+| Flutter and Dart Developer | NEVRA | $88,082 - $106,077/yr | Remote | Applied ✓ |
+| Sr Software Engineer | Metova | Full benefits (Health/Dental/401k/PTO) | Remote | Applied ✓ |
+
+**Notes:** First day using Indeed. Found quality Flutter roles with competitive salaries. Gray Media has excellent benefits (401k match, PTO). NEVRA is equity partner model with flexible 10hr/week. Metova is established company (since 2006) - Flutter listed as valuable skill, full-time with excellent benefits, leadership opportunity.
+
+---
+
 ## Upwork Applications
+
+### January 17, 2026
+
+**Notes:** Checked for new Flutter/AI jobs. Limited new postings meeting criteria ($1K+, <5 proposals). Conserving connects (7 remaining) for higher-quality matches.
+
+---
 
 ### January 16, 2026
 
