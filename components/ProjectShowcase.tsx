@@ -1,70 +1,19 @@
 'use client';
 
 import { useRef, useState } from 'react';
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useSound } from '@/hooks/useSound';
+import { projects, type Project } from '@/data/projects';
 
-interface Project {
-  id: string;
-  codename: string;
-  title: string;
-  description: string;
-  tech: string[];
-  status: 'LIVE' | 'BETA' | 'ALPHA' | 'IN_DEV';
-  accent: 'neural' | 'amber';
-  link?: string;
-}
-
-const projects: Project[] = [
-  {
-    id: 'apex-iq',
-    codename: 'VELOCITY',
-    title: 'ApexIQ',
-    description: 'Strategy-first Formula 1 intelligence companion. Explains why races unfold the way they do through real-time strategy analysis, tire decisions, and pace breakdowns.',
-    tech: ['Flutter', 'Firebase', 'OpenF1 API', 'Riverpod'],
-    status: 'LIVE',
-    accent: 'neural',
-    link: 'https://apex-iq.web.app',
-  },
-  {
-    id: 'roomzy',
-    codename: 'VISION',
-    title: 'Roomzy AI',
-    description: 'AI-powered virtual staging for real estate. Transforms empty rooms into beautifully furnished spaces using generative AI, helping agents and hosts market listings faster.',
-    tech: ['Flutter', 'Firebase', 'Generative AI', 'Cloud Functions'],
-    status: 'BETA',
-    accent: 'amber',
-  },
-  {
-    id: 'moro',
-    codename: 'SYNAPTIC',
-    title: 'Moro',
-    description: 'Intelligent flashcard platform with AI-generated content and adaptive spaced repetition. Automatically creates study materials from uploads and optimizes retention.',
-    tech: ['Flutter', 'Google AI', 'Firebase', 'FSRS Algorithm'],
-    status: 'ALPHA',
-    accent: 'neural',
-  },
-  {
-    id: 'gigledger',
-    codename: 'LEDGER',
-    title: 'GigLedger',
-    description: 'All-in-one business manager for freelancers. Handles invoicing, expense tracking, client management, and time logging in a single streamlined workflow.',
-    tech: ['Flutter', 'Firebase', 'Riverpod', 'Clean Architecture'],
-    status: 'IN_DEV',
-    accent: 'amber',
-  },
-  {
-    id: 'leaklens',
-    codename: 'SENTINEL',
-    title: 'LeakLens',
-    description: 'Revenue intelligence platform that detects and explains hidden revenue leakage across billing systems. Surfaces discrepancies and recovery opportunities.',
-    tech: ['Flutter', 'Firebase', 'Riverpod', 'Analytics'],
-    status: 'IN_DEV',
-    accent: 'neural',
-  },
-];
-
-function ProjectCard({ project, index }: { project: Project; index: number }) {
+function ProjectCard({
+  project,
+  index,
+  onClick,
+}: {
+  project: Project;
+  index: number;
+  onClick: (project: Project) => void;
+}) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
   const { play } = useSound();
@@ -98,9 +47,13 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       transition={{ duration: 0.6, delay: index * 0.1 }}
       onMouseEnter={handleCardHover}
       onMouseLeave={() => setIsHovered(false)}
-      className={`group relative border border-border bg-surface/30 backdrop-blur-sm overflow-hidden transition-all duration-500 ${
+      className={`group relative border border-border bg-surface/30 backdrop-blur-sm overflow-hidden transition-all duration-500 cursor-pointer ${
         isHovered ? `shadow-glow-${accentColor}` : ''
       }`}
+      onClick={() => {
+        play('click');
+        onClick(project);
+      }}
     >
       {/* Corner decorations */}
       <div className={`absolute top-0 left-0 w-8 h-8 border-l border-t border-${accentColor}/30 transition-all duration-500 ${
@@ -156,22 +109,37 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         </div>
 
         {/* Actions */}
-        {project.link && (
-          <div className="flex gap-4">
+        <div className="flex gap-4">
+          <button
+            onMouseEnter={handleButtonHover}
+            onClick={(e) => {
+              e.stopPropagation();
+              play('click');
+              onClick(project);
+            }}
+            className={`group/btn flex items-center gap-2 px-4 py-2 font-mono text-xs tracking-wider text-${accentColor} border border-${accentColor}/30 transition-all duration-300 hover:bg-${accentColor}/10 hover:border-${accentColor}`}
+          >
+            <span>DETAILS</span>
+            <svg className="w-3 h-3 transition-transform group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+          {project.link && (
             <a
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
               onMouseEnter={handleButtonHover}
-              className={`group/btn flex items-center gap-2 px-4 py-2 font-mono text-xs tracking-wider text-${accentColor} border border-${accentColor}/30 transition-all duration-300 hover:bg-${accentColor}/10 hover:border-${accentColor}`}
+              onClick={(e) => e.stopPropagation()}
+              className={`group/btn flex items-center gap-2 px-4 py-2 font-mono text-xs tracking-wider text-text-secondary border border-border transition-all duration-300 hover:border-text-tertiary hover:text-text-primary`}
             >
               <span>LAUNCH</span>
               <svg className="w-3 h-3 transition-transform group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
             </a>
-          </div>
-        )}
+          )}
+        </div>
       </div>
 
       {/* Hover gradient overlay */}
@@ -184,7 +152,11 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
   );
 }
 
-export default function ProjectShowcase() {
+export default function ProjectShowcase({
+  onProjectClick,
+}: {
+  onProjectClick: (project: Project) => void;
+}) {
   const sectionRef = useRef<HTMLElement>(null);
 
   return (
@@ -218,8 +190,8 @@ export default function ProjectShowcase() {
               <span className="text-text-tertiary">Archive</span>
             </h2>
             <p className="text-text-secondary max-w-xl">
-              Mobile applications and AI integrations across various stages of development—from
-              live products to active experiments.
+              Fullstack applications and AI integrations across mobile, web, backend, and
+              developer tools—from live products to active experiments.
             </p>
           </motion.div>
 
@@ -254,7 +226,12 @@ export default function ProjectShowcase() {
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
+            <ProjectCard
+              key={project.id}
+              project={project}
+              index={index}
+              onClick={onProjectClick}
+            />
           ))}
         </div>
       </div>
@@ -270,7 +247,7 @@ export default function ProjectShowcase() {
         <div className="flex items-center gap-4 font-mono text-xs text-text-tertiary">
           <span className="text-neural">$</span>
           <span>cat operations.log | tail -1</span>
-          <span className="text-text-secondary">→ More missions available upon request</span>
+          <span className="text-text-secondary">→ Ask CIPHER for the full debrief on any mission</span>
           <span className="animate-blink text-neural">_</span>
         </div>
       </motion.div>
