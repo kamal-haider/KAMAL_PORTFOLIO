@@ -137,30 +137,77 @@ export async function POST(request: NextRequest) {
     // Cap conversation length to prevent prompt bloat
     const recentMessages = messages.slice(-20);
 
-    const response = await client.messages.create({
+    let allMessages: Anthropic.MessageParam[] = [...recentMessages];
+    let allText = '';
+    const allNavigations: { action: string; target: string }[] = [];
+
+    // Loop to handle tool use — Claude may return tool_use blocks that need
+    // a tool_result before it sends the final text response
+    let response = await client.messages.create({
       model: 'claude-haiku-4-5-20251001',
       max_tokens: 1024,
       system: buildSystemPrompt(),
       tools: navigationTools,
-      messages: recentMessages,
+      messages: allMessages,
     });
 
-    // Extract text and tool use blocks
-    const textBlocks = response.content.filter(
-      (b): b is Anthropic.TextBlock => b.type === 'text'
-    );
-    const toolBlocks = response.content.filter(
-      (b): b is Anthropic.ToolUseBlock => b.type === 'tool_use'
-    );
+    // Collect text from initial response
+    const initialText = response.content
+      .filter((b): b is Anthropic.TextBlock => b.type === 'text')
+      .map((b) => b.text)
+      .join('');
+    if (initialText) allText += initialText;
 
-    const text = textBlocks.map((b) => b.text).join('');
-    const navigations = toolBlocks
-      .filter((b) => b.name === 'navigate')
-      .map((b) => b.input as { action: string; target: string });
+    // If Claude used tools, send back tool results and get final text
+    while (response.stop_reason === 'tool_use') {
+      const toolBlocks = response.content.filter(
+        (b): b is Anthropic.ToolUseBlock => b.type === 'tool_use'
+      );
+
+      // Collect navigation actions
+      for (const block of toolBlocks) {
+        if (block.name === 'navigate') {
+          allNavigations.push(
+            block.input as { action: string; target: string }
+          );
+        }
+      }
+
+      // Build tool results — navigation is client-side, so just confirm success
+      const toolResults: Anthropic.ToolResultBlockParam[] = toolBlocks.map(
+        (block) => ({
+          type: 'tool_result' as const,
+          tool_use_id: block.id,
+          content: `Navigation action "${(block.input as { action: string }).action}" dispatched successfully.`,
+        })
+      );
+
+      // Add assistant response + tool results to conversation
+      allMessages = [
+        ...allMessages,
+        { role: 'assistant' as const, content: response.content },
+        { role: 'user' as const, content: toolResults },
+      ];
+
+      // Get follow-up response with text
+      response = await client.messages.create({
+        model: 'claude-haiku-4-5-20251001',
+        max_tokens: 1024,
+        system: buildSystemPrompt(),
+        tools: navigationTools,
+        messages: allMessages,
+      });
+
+      const followUpText = response.content
+        .filter((b): b is Anthropic.TextBlock => b.type === 'text')
+        .map((b) => b.text)
+        .join('');
+      if (followUpText) allText += followUpText;
+    }
 
     return NextResponse.json({
-      text,
-      navigations,
+      text: allText,
+      navigations: allNavigations,
     });
   } catch (error) {
     console.error('Chat API error:', error);
