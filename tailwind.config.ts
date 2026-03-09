@@ -5,6 +5,16 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./data/**/*.{js,ts}",
+  ],
+  safelist: [
+    // Dynamic accent color classes used with template literals
+    'text-neural', 'text-amber', 'bg-neural', 'bg-amber',
+    'border-neural', 'border-amber', 'border-neural/30', 'border-amber/30',
+    'border-neural/20', 'border-amber/20',
+    'bg-neural/5', 'bg-amber/5', 'bg-neural/10', 'bg-amber/10',
+    'shadow-glow-neural', 'shadow-glow-amber',
+    'from-neural/5', 'from-amber/5',
   ],
   theme: {
     extend: {

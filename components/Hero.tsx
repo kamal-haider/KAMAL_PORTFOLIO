@@ -80,7 +80,7 @@ export default function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   const { displayText: nameText, isComplete: nameComplete } = useTypingEffect('KAMAL HAIDER', 80, 800);
-  const { displayText: roleText, isComplete: roleComplete } = useTypingEffect('AI MOBILE ENGINEER', 60, 2000);
+  const { displayText: roleText, isComplete: roleComplete } = useTypingEffect('FULLSTACK AI ENGINEER', 60, 2000);
   const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
@@ -104,8 +104,8 @@ export default function Hero() {
 
   const stats = [
     { label: 'CLEARANCE', value: 'FULL ACCESS', color: 'neural' },
-    { label: 'SPECIALIZATION', value: 'MOBILE + AI', color: 'amber' },
-    { label: 'FRAMEWORK', value: 'FLUTTER', color: 'neural' },
+    { label: 'SPECIALIZATION', value: 'FULLSTACK + AI', color: 'amber' },
+    { label: 'STACK', value: 'TS / PYTHON / FLUTTER', color: 'neural' },
     { label: 'STATUS', value: 'AVAILABLE', color: 'amber' },
   ];
 
@@ -184,9 +184,9 @@ export default function Hero() {
               className="max-w-2xl mb-12"
             >
               <p className="text-lg text-text-secondary leading-relaxed">
-                Building mobile applications that integrate AI capabilities—from
-                LLM-powered features and on-device intelligence to cross-platform
-                experiences on iOS and Android. Specializing in Flutter + AI integration.
+                Building AI-powered products across the full stack—from agentic systems
+                and LLM orchestration to production web apps, mobile clients, and backend
+                APIs. Shipping with Next.js, Flutter, Node.js, and Claude.
               </p>
             </motion.div>
 

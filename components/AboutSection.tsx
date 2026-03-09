@@ -4,32 +4,47 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const skills = [
-  { category: 'MOBILE', items: ['Flutter', 'Swift', 'Kotlin', 'React Native'] },
-  { category: 'AI/ML', items: ['OpenAI', 'LangChain', 'TensorFlow Lite', 'On-Device ML'] },
-  { category: 'BACKEND', items: ['Node.js', 'Python', 'Firebase', 'PostgreSQL'] },
-  { category: 'TOOLS', items: ['Git', 'CI/CD', 'AWS', 'Docker'] },
+  { category: 'AI / AGENTS', items: ['Claude', 'OpenAI / ChatGPT', 'Gemini', 'LangChain', 'Tool Use', 'RAG', 'AI Agents', 'Vector DBs'] },
+  { category: 'FRONTEND', items: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Flutter'] },
+  { category: 'BACKEND', items: ['Node.js', 'Python', 'Fastify', 'PostgreSQL', 'Firebase', 'Supabase'] },
+  { category: 'INFRA', items: ['Vercel', 'AWS', 'Docker', 'CI/CD', 'GitHub Actions'] },
+  { category: 'HARDWARE', items: ['Arduino', 'Bluetooth/BLE', 'Embedded Systems', 'Serial Comm'] },
 ];
 
 const timeline = [
   {
-    period: '2022 - PRESENT',
-    role: 'Senior Mobile Engineer',
-    company: 'Freelance / Consulting',
-    description: 'Building AI-powered mobile applications for startups and enterprises.',
+    period: '2025 - PRESENT',
+    role: 'Fullstack AI Engineer',
+    company: 'Independent / Generation28',
+    description: 'Building AI-powered products and developer tools — agentic systems, LLM orchestration platforms, and fullstack applications using Claude, Next.js, and Node.js.',
     highlight: true,
   },
   {
-    period: '2020 - 2022',
-    role: 'Mobile Developer',
-    company: 'Tech Startup',
-    description: 'Led Flutter development for production applications with 100K+ users.',
+    period: '2021 - PRESENT',
+    role: 'Application Developer',
+    company: 'CirrusMD',
+    description: 'Building and maintaining telehealth Android applications supporting secure virtual doctor visits. Integrating HIPAA-compliant APIs and real-time video communication.',
     highlight: false,
   },
   {
-    period: '2018 - 2020',
-    role: 'Software Engineer',
-    company: 'Agency',
-    description: 'Full-stack development and mobile app architecture.',
+    period: '2022 - 2025',
+    role: 'Software Architect / Engineering Lead',
+    company: 'Norwegian Cruise Line',
+    description: 'Architected systems serving millions of users. Led a team of 8+ engineers. Designed scalable architecture enabling 40% faster feature delivery and CI/CD pipelines reducing deployment time by 60%.',
+    highlight: false,
+  },
+  {
+    period: '2019 - 2021',
+    role: 'Senior Application Developer',
+    company: 'Reatro Ventures',
+    description: 'Developed cross-platform apps for iOS and Android. Led real-time payments and order tracking API architecture. Designed analytics-driven features increasing conversion by 25%.',
+    highlight: false,
+  },
+  {
+    period: '2016 - 2019',
+    role: 'Android & Embedded Systems Developer',
+    company: 'CellAntenna',
+    description: 'Developed Android apps for hardware device communication. Wrote Bash scripts to program Arduino-based embedded systems. Built the full mobile-to-hardware pipeline.',
     highlight: false,
   },
 ];
@@ -108,39 +123,41 @@ export default function AboutSection() {
 
               <div className="space-y-6 text-text-secondary leading-relaxed">
                 <p>
-                  A mobile engineer specializing in AI-powered applications. My focus is
-                  building production-ready Flutter apps that leverage LLMs, on-device ML,
-                  and modern AI capabilities.
+                  A fullstack engineer who builds AI-powered products from the ground up.
+                  I work across the entire stack — frontend (Next.js, React, Flutter),
+                  backend (Node.js, Python, PostgreSQL), and AI (Claude API, agentic
+                  systems, tool orchestration).
                 </p>
                 <p>
-                  With experience across the full mobile stack—from UI/UX implementation
-                  to backend integration—I help teams ship AI features that actually work
-                  in the real world.
+                  I don&apos;t just integrate AI — I architect systems around it. From prompt
+                  engineering and RAG pipelines to autonomous agents that use tools and
+                  make decisions, I build the full infrastructure that makes AI products work
+                  in production.
                 </p>
                 <p>
-                  Currently available for consulting and contract work on ambitious mobile
-                  + AI projects.
+                  Currently available for senior engineering roles, AI architecture
+                  consulting, and high-impact fullstack projects.
                 </p>
               </div>
 
               {/* Quick stats */}
               <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-border">
                 <div>
-                  <div className="font-mono text-3xl font-bold text-neural">6+</div>
+                  <div className="font-mono text-3xl font-bold text-neural">10+</div>
                   <div className="font-mono text-[10px] text-text-tertiary tracking-wider mt-1">
                     YEARS EXP
                   </div>
                 </div>
                 <div>
-                  <div className="font-mono text-3xl font-bold text-amber">30+</div>
+                  <div className="font-mono text-3xl font-bold text-amber">25+</div>
                   <div className="font-mono text-[10px] text-text-tertiary tracking-wider mt-1">
                     PROJECTS
                   </div>
                 </div>
                 <div>
-                  <div className="font-mono text-3xl font-bold text-neural">500K+</div>
+                  <div className="font-mono text-3xl font-bold text-neural">3</div>
                   <div className="font-mono text-[10px] text-text-tertiary tracking-wider mt-1">
-                    APP USERS
+                    AI PRODUCTS LIVE
                   </div>
                 </div>
               </div>
@@ -164,7 +181,7 @@ export default function AboutSection() {
                 <div className="flex-1 h-px bg-border" />
               </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
                 {skills.map((skill, i) => (
                   <motion.div
                     key={skill.category}

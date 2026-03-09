@@ -13,7 +13,10 @@ import LoadingScreen from '@/components/LoadingScreen';
 import CustomCursor from '@/components/CustomCursor';
 import SoundToggle from '@/components/SoundToggle';
 import ScrollToTop from '@/components/ScrollToTop';
+import CipherChat from '@/components/CipherChat';
+import ProjectModal from '@/components/ProjectModal';
 import { SoundProvider } from '@/hooks/useSound';
+import { projects, getProjectById, type Project } from '@/data/projects';
 
 // Dynamically import heavy 3D components
 const NeuralField = dynamic(() => import('@/components/NeuralField'), {
@@ -26,10 +29,59 @@ const NeuralField = dynamic(() => import('@/components/NeuralField'), {
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [isReady, setIsReady] = useState(false);
+  const [activeProject, setActiveProject] = useState<Project | null>(null);
 
   const handleLoadingComplete = useCallback(() => {
     setIsLoading(false);
     setTimeout(() => setIsReady(true), 100);
+  }, []);
+
+  const handleCloseModal = useCallback(() => {
+    setActiveProject(null);
+  }, []);
+
+  // Navigation bridge — listen for CIPHER navigation events
+  useEffect(() => {
+    const handleCipherNavigate = (e: Event) => {
+      const { action, target } = (e as CustomEvent).detail;
+
+      if (action === 'scrollTo') {
+        const element = document.getElementById(target);
+        if (element) {
+          const navHeight = 80;
+          const elementPosition =
+            element.getBoundingClientRect().top + window.pageYOffset;
+          window.scrollTo({
+            top: elementPosition - navHeight,
+            behavior: 'smooth',
+          });
+        }
+      }
+
+      if (action === 'openProject') {
+        const project = getProjectById(target);
+        if (project) {
+          setActiveProject(project);
+        }
+      }
+
+      if (action === 'openContact') {
+        const element = document.getElementById('contact');
+        if (element) {
+          const navHeight = 80;
+          const elementPosition =
+            element.getBoundingClientRect().top + window.pageYOffset;
+          window.scrollTo({
+            top: elementPosition - navHeight,
+            behavior: 'smooth',
+          });
+        }
+      }
+    };
+
+    window.addEventListener('cipher:navigate', handleCipherNavigate);
+    return () =>
+      window.removeEventListener('cipher:navigate', handleCipherNavigate);
   }, []);
 
   return (
@@ -56,10 +108,19 @@ export default function Home() {
         <main className={`relative z-10 transition-opacity duration-500 ${isReady ? 'opacity-100' : 'opacity-0'}`}>
           <Navigation />
           <Hero />
-          <ProjectShowcase />
+          <ProjectShowcase onProjectClick={setActiveProject} />
           <AboutSection />
           <ContactSection />
         </main>
+
+        {/* Project Detail Modal */}
+        <ProjectModal
+          project={activeProject}
+          onClose={handleCloseModal}
+        />
+
+        {/* CIPHER Chat Agent */}
+        <CipherChat />
 
         {/* Noise overlay for texture */}
         <div

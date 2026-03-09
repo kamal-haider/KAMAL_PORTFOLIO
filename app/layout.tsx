@@ -22,28 +22,28 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "NEURAL.LINK | Kamal Haider - AI Mobile Engineer",
+  title: "NEURAL.LINK | Kamal Haider - Fullstack AI Engineer",
   description:
-    "Command center for AI-powered mobile experiences. Building production apps with LLMs, on-device intelligence, and cross-platform Flutter solutions for iOS and Android.",
+    "Fullstack engineer building AI-powered products across web, mobile, and backend. Specializing in agentic systems, LLM integration, and production-grade software architecture.",
   metadataBase: new URL("https://kamalhaider.ai"),
   keywords: [
-    "AI Mobile Engineer",
-    "Flutter Developer",
-    "iOS Developer",
-    "Android Developer",
-    "Mobile App Development",
+    "Fullstack AI Engineer",
+    "AI Software Architect",
     "LLM Integration",
-    "OpenAI",
-    "Cross-Platform",
-    "React Native",
-    "Mobile Architecture",
+    "Claude API",
+    "AI Agents",
+    "Next.js",
+    "Flutter",
+    "TypeScript",
+    "Node.js",
+    "Software Architecture",
   ],
   authors: [{ name: "Kamal Haider", url: "https://kamalhaider.ai" }],
   creator: "Kamal Haider",
   openGraph: {
-    title: "NEURAL.LINK | Kamal Haider - AI Mobile Engineer",
+    title: "NEURAL.LINK | Kamal Haider - Fullstack AI Engineer",
     description:
-      "Command center for AI-powered mobile experiences. Building production apps with LLMs and cross-platform solutions.",
+      "Fullstack engineer building AI-powered products across web, mobile, and backend. Specializing in agentic systems and production software architecture.",
     url: "https://kamalhaider.ai",
     siteName: "Kamal Haider",
     images: [
@@ -59,11 +59,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "NEURAL.LINK | Kamal Haider - AI Mobile Engineer",
+    title: "NEURAL.LINK | Kamal Haider - Fullstack AI Engineer",
     description:
-      "Command center for AI-powered mobile experiences. Building production apps with LLMs and cross-platform solutions.",
+      "Fullstack engineer building AI-powered products across web, mobile, and backend. Specializing in agentic systems and production software architecture.",
     images: ["/twitter-card.png"],
-    creator: "@kamalhaider",
+    creator: "@kamal_haider",
   },
   robots: {
     index: true,

@@ -105,7 +105,7 @@ export default function OGImage() {
               textTransform: 'uppercase',
             }}
           >
-            AI Mobile Engineer
+            Fullstack AI Engineer
           </span>
         </div>
 
