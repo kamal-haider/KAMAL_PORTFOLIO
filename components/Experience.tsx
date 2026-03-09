@@ -4,14 +4,14 @@ import { useState, useRef, useEffect } from 'react';
 
 const experiences = [
   {
-    id: 'ncl',
-    title: 'Mobile Architect Owner',
-    company: 'Norwegian Cruise Line',
+    id: 'generation28',
+    title: 'Fullstack AI Engineer',
+    company: 'Independent / Generation28',
     description: [
-      'Lead mobile architecture for customer-facing travel apps',
-      'Manage team of 8 developers across iOS and Android',
-      'Design scalable cross-platform architecture with Flutter',
-      'Oversee CI/CD pipelines and automation tooling',
+      'Building AI-powered products end-to-end: web apps, backend APIs, and AI agent systems',
+      'Architected CIPHER, an AI portfolio agent using Claude tool use API with server-side orchestration',
+      'Built NexusAPI, an MCP-native API platform with registry, gateway, and metering',
+      'Shipping with Claude API, OpenAI, TypeScript, Next.js, Node.js, and PostgreSQL',
     ],
   },
   {
@@ -19,8 +19,20 @@ const experiences = [
     title: 'Application Developer',
     company: 'CirrusMD',
     description: [
-      'Built telehealth Android app for appointments and video chat',
-      'Integrated APIs for medical records and insurance sync',
+      'Building and maintaining telehealth Android applications for secure virtual doctor visits',
+      'Integrating HIPAA-compliant APIs and real-time video communication',
+      'Delivering healthcare software under strict compliance and security requirements',
+    ],
+  },
+  {
+    id: 'ncl',
+    title: 'Software Architect / Engineering Lead',
+    company: 'Norwegian Cruise Line',
+    description: [
+      'Led mobile architecture for large-scale travel applications serving millions of users',
+      'Managed and mentored a team of 8+ mobile engineers',
+      'Designed scalable Flutter architecture enabling 40% faster feature delivery',
+      'Established CI/CD pipelines reducing deployment time by 60%',
     ],
   },
   {
@@ -28,46 +40,46 @@ const experiences = [
     title: 'Senior Application Developer',
     company: 'Reatro Ventures',
     description: [
-      'Developed Flutter food ordering apps for iOS and Android',
-      'Built smart menu system with user analytics tracking',
-      'Created cross-platform messaging and payment apps',
+      'Developed Flutter-based food ordering apps for iOS and Android',
+      'Designed analytics-driven smart menus increasing conversion by 25%',
+      'Led real-time payments and order tracking API architecture',
     ],
   },
   {
     id: 'cellantenna',
-    title: 'Android Developer',
-    company: 'Cell Antenna',
+    title: 'Android & Embedded Systems Developer',
+    company: 'CellAntenna',
     description: [
-      'Built Android software for mobile security applications',
-      'Developed device testing automation with Bash/Linux',
-      'Managed SQL databases for mobile hardware environments',
+      'Developed Android apps for interfacing with hardware devices via Bluetooth and serial communication',
+      'Wrote Bash scripts to program and configure Arduino-based embedded systems',
+      'Built the full mobile-to-hardware pipeline — from device protocols to user-facing apps',
     ],
   },
 ];
 
 const skills = {
-  'AI & ML': [
-    'Mobile LLM Integration',
-    'On-device AI Models',
-    'AI Pipeline Optimization',
+  'AI / Agents': [
+    'Claude / OpenAI / Gemini',
+    'Tool Use & Agentic Workflows',
+    'RAG & Vector Databases',
     'Prompt Engineering',
   ],
-  'Mobile': [
+  'Frontend': [
+    'Next.js / React',
+    'TypeScript',
     'Flutter / Dart',
-    'Kotlin / Java',
-    'iOS / Android',
-    'Cross-platform',
+    'Tailwind CSS',
   ],
   'Backend': [
     'Node.js / Python',
-    'Firebase / Serverless',
-    'REST API Design',
-    'Vector Databases',
+    'PostgreSQL / Firebase',
+    'REST APIs / Fastify',
+    'Supabase / Prisma',
   ],
-  'Architecture': [
-    'Clean Architecture',
-    'Domain-driven Design',
-    'CI/CD Pipelines',
+  'Infrastructure': [
+    'Vercel / AWS',
+    'Docker / CI/CD',
+    'GitHub Actions',
     'Team Leadership',
   ],
 };

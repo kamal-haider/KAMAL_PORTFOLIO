@@ -185,13 +185,13 @@ export default function ProjectShowcase({
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <h2 className="text-title font-bold mb-4">
-              <span className="text-text-primary">Mission</span>
+              <span className="text-text-primary">Recent</span>
               <br />
-              <span className="text-text-tertiary">Archive</span>
+              <span className="text-text-tertiary">Projects</span>
             </h2>
             <p className="text-text-secondary max-w-xl">
-              Fullstack applications and AI integrations across mobile, web, backend, and
-              developer tools—from live products to active experiments.
+              Active builds across the full stack — AI agents, backend infrastructure,
+              developer tools, and cross-platform apps at different stages of development.
             </p>
           </motion.div>
 
@@ -213,10 +213,6 @@ export default function ProjectShowcase({
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-purple-400" />
               <span className="text-text-tertiary">ALPHA</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-text-tertiary" />
-              <span className="text-text-tertiary">IN DEV</span>
             </div>
           </motion.div>
         </div>

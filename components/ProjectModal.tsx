@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useCallback } from 'react';
+import { useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useSound } from '@/hooks/useSound';
 import { type Project } from '@/data/projects';
@@ -12,6 +12,7 @@ interface ProjectModalProps {
 
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   const { play } = useSound();
+  const panelRef = useRef<HTMLDivElement>(null);
 
   const handleEscape = useCallback(
     (e: KeyboardEvent) => {
@@ -31,6 +32,19 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
       document.body.style.overflow = '';
     };
   }, [project, handleEscape, play]);
+
+  // Stop Lenis smooth scroll from hijacking wheel events on the modal panel
+  useEffect(() => {
+    const panel = panelRef.current;
+    if (!panel || !project) return;
+
+    const stopPropagation = (e: WheelEvent) => {
+      e.stopPropagation();
+    };
+
+    panel.addEventListener('wheel', stopPropagation, { passive: false });
+    return () => panel.removeEventListener('wheel', stopPropagation);
+  }, [project]);
 
   const accentColor = project?.accent === 'neural' ? 'neural' : 'amber';
 
@@ -61,6 +75,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             animate={{ x: 0 }}
             exit={{ x: '-100%' }}
             transition={{ type: 'spring', damping: 30, stiffness: 300 }}
+            ref={panelRef}
             className="fixed top-0 left-0 bottom-0 z-[55] w-full max-w-lg overflow-y-auto border-r border-border bg-void/95 backdrop-blur-xl"
           >
             {/* Header */}
