@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import ReactMarkdown from 'react-markdown';
 import { useSound } from '@/hooks/useSound';
 
 interface Message {
@@ -298,18 +299,75 @@ export default function CipherChat() {
                       </span>
                     </div>
                   )}
-                  <div
-                    className={`font-mono text-sm leading-relaxed ${
-                      msg.role === 'assistant'
-                        ? 'text-text-secondary'
-                        : 'text-text-primary'
-                    }`}
-                  >
-                    {msg.role === 'assistant' && (
-                      <span className="text-neural">{'>'} </span>
-                    )}
-                    {msg.content}
-                  </div>
+                  {msg.role === 'user' ? (
+                    <div className="font-mono text-sm leading-relaxed text-text-primary min-w-0">
+                      {msg.content}
+                    </div>
+                  ) : (
+                    <div className="min-w-0 overflow-hidden cipher-markdown">
+                      <ReactMarkdown
+                        components={{
+                          p: ({ children }) => (
+                            <p className="font-mono text-sm leading-relaxed text-text-secondary mb-3 last:mb-0">
+                              {children}
+                            </p>
+                          ),
+                          strong: ({ children }) => (
+                            <strong className="text-text-primary font-semibold">
+                              {children}
+                            </strong>
+                          ),
+                          em: ({ children }) => (
+                            <em className="text-neural not-italic">{children}</em>
+                          ),
+                          ul: ({ children }) => (
+                            <ul className="space-y-1.5 mb-3 last:mb-0">{children}</ul>
+                          ),
+                          ol: ({ children }) => (
+                            <ol className="space-y-1.5 mb-3 last:mb-0 list-decimal list-inside">{children}</ol>
+                          ),
+                          li: ({ children }) => (
+                            <li className="font-mono text-sm text-text-secondary leading-relaxed flex gap-2">
+                              <span className="text-neural shrink-0">{'>'}</span>
+                              <span>{children}</span>
+                            </li>
+                          ),
+                          code: ({ children }) => (
+                            <code className="px-1.5 py-0.5 bg-surface text-neural font-mono text-xs border border-border">
+                              {children}
+                            </code>
+                          ),
+                          h1: ({ children }) => (
+                            <h3 className="font-mono text-sm font-bold text-text-primary mb-2 tracking-wider">
+                              {children}
+                            </h3>
+                          ),
+                          h2: ({ children }) => (
+                            <h3 className="font-mono text-sm font-bold text-text-primary mb-2 tracking-wider">
+                              {children}
+                            </h3>
+                          ),
+                          h3: ({ children }) => (
+                            <h3 className="font-mono text-sm font-bold text-text-primary mb-2 tracking-wider">
+                              {children}
+                            </h3>
+                          ),
+                          a: ({ href, children }) => (
+                            <a
+                              href={href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-neural underline hover:text-neural/80"
+                            >
+                              {children}
+                            </a>
+                          ),
+                        }}
+                      >
+                        {msg.content}
+                      </ReactMarkdown>
+                    </div>
+                  )}
                 </div>
               ))}
 
