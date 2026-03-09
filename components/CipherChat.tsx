@@ -72,6 +72,7 @@ export default function CipherChat() {
   const [tokens, setTokenCount] = useState(MAX_TOKENS);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
   const { play } = useSound();
 
   useEffect(() => {
@@ -86,6 +87,19 @@ export default function CipherChat() {
     if (isOpen && inputRef.current) {
       inputRef.current.focus();
     }
+  }, [isOpen]);
+
+  // Stop Lenis smooth scroll from hijacking wheel events when hovering chat
+  useEffect(() => {
+    const panel = panelRef.current;
+    if (!panel || !isOpen) return;
+
+    const stopPropagation = (e: WheelEvent) => {
+      e.stopPropagation();
+    };
+
+    panel.addEventListener('wheel', stopPropagation, { passive: false });
+    return () => panel.removeEventListener('wheel', stopPropagation);
   }, [isOpen]);
 
   const dispatchNavigation = useCallback((nav: NavigationAction) => {
@@ -201,6 +215,7 @@ export default function CipherChat() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            ref={panelRef}
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
