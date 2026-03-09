@@ -57,11 +57,11 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
           {/* Modal panel - slides in from right */}
           <motion.div
-            initial={{ x: '100%' }}
+            initial={{ x: '-100%' }}
             animate={{ x: 0 }}
-            exit={{ x: '100%' }}
+            exit={{ x: '-100%' }}
             transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-            className="fixed top-0 right-0 bottom-0 z-[55] w-full max-w-lg overflow-y-auto border-l border-border bg-void/95 backdrop-blur-xl"
+            className="fixed top-0 left-0 bottom-0 z-[55] w-full max-w-lg overflow-y-auto border-r border-border bg-void/95 backdrop-blur-xl"
           >
             {/* Header */}
             <div className="sticky top-0 z-10 flex items-center justify-between px-6 py-4 border-b border-border bg-void/90 backdrop-blur-xl">
